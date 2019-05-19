@@ -9,10 +9,10 @@ const https = require('https');
 const http = require('http');
 const app = express();
 
+app.get('/', (req, res) => res.send('Hello World!'));
+
 http.createServer(app).listen(process.env.HTTP_PORT);
 https.createServer({
   key: privateKey,
   cert: certificate,
 }, app).listen(process.env.HTTPS_PORT);
-
-app.get('/', (req, res) => res.send('Hello World!'));
