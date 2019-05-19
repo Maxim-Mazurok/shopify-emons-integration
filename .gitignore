@@ -1,5 +1,7 @@
 .env
 .env.local
+ssl.crt
+ssl.key
 node_modules/
 
 ### JetBrains template
