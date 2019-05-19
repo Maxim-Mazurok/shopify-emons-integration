@@ -9,8 +9,8 @@ const https = require('https');
 const http = require('http');
 const app = express();
 
-http.createServer(app).listen(80);
+http.createServer(app).listen(process.env.HTTP_PORT);
 https.createServer({
   key: privateKey,
   cert: certificate,
-}, app).listen(443);
+}, app).listen(process.env.HTTPS_PORT);
