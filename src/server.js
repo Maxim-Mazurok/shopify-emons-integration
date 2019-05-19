@@ -14,3 +14,5 @@ https.createServer({
   key: privateKey,
   cert: certificate,
 }, app).listen(process.env.HTTPS_PORT);
+
+app.get('/', (req, res) => res.send('Hello World!'));
