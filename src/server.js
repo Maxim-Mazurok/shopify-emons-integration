@@ -5,8 +5,7 @@ const bodyParser = require('body-parser');
 const https = require('https');
 const http = require('http');
 const crypto = require('crypto');
-const FastestValidator = require("fastest-validator");
-const validator = new FastestValidator();
+const Validator = require("fastest-validator");
 const csvWriter = require('csv-writer');
 const nestedProperty = require("nested-property");
 
@@ -32,28 +31,50 @@ app.post('/', (req, res) => {
   ) {
     // data is signed correctly
 
-    // if (checkOrder(json)) {
-    //   console.log('ok');
-    console.log(buildCSV(parseOrder(json)));
-    // } else {
-    //   console.log('not ok')
-    // }
+    if (checkOrder(json) === true) {
+      console.log(buildCSV(parseOrder(json)));
+    } else {
+      console.log('data is not ok')
+    }
   }
 });
 
-// function checkOrder(json) {
-//   const schema = {
-//     customer: {
-//       type: "object", props: {
-//         email: { type: "string", optional: true },
-//         first_name: { type: "string", optional: true },
-//         last_name: { type: "string", optional: true },
-//       }
-//     },
-//   };
-//
-//   return validator.validate(json, schema);
-// }
+function checkOrder(json) {
+  const schema = {
+    customer: {
+      type: "object", props: {
+        first_name: { type: "string", optional: true },
+        last_name: { type: "string", optional: true },
+        email: { type: "string", optional: true },
+      }
+    },
+    shipping_address: {
+      type: "object", props: {
+        address1: { type: "string", optional: true },
+        address2: { type: "string", optional: true },
+        country_code: { type: "string", optional: true },
+        zip: { type: "string", optional: true },
+        city: { type: "string", optional: true },
+        phone: { type: "string", optional: true },
+      }
+    },
+    line_items: {
+      type: "array", min: 1, items: {
+        type: "object", props: {
+          product_id: { type: "number", optional: true },
+          quantity: { type: "number", optional: true },
+          grams: { type: "number", optional: true },
+        }
+      }
+    }
+  };
+  if (process.env.DEV !== "true") {
+    schema.financial_status = { type: "string", pattern: /^paid$/g }; // process only paid orders
+  }
+
+  const v = new Validator();
+  return v.validate(json, schema);
+}
 
 function parseOrder(json) {
   const getAddress = json => {
@@ -62,21 +83,29 @@ function parseOrder(json) {
     return address2 ? `${address1}; ${address2}` : address1;
   };
 
+  // if requires_shipping ...
+
   return {
-    firstName: (nestedProperty.get(json, 'customer.first_name') || '').substring(0, 100),
-    lastName: (nestedProperty.get(json, 'customer.last_name') || 'Anonymous').substring(0, 100),
-    address: (getAddress(json) || 'No address').substring(0, 100),
-    country_code: (nestedProperty.get(json, 'shipping_address.country_code') || 'NONE').substring(0, 10),
-    zip: (nestedProperty.get(json, 'shipping_address.zip') || 'NONE').substring(0, 10),
-    city: (nestedProperty.get(json, 'shipping_address.city') || 'NONE').substring(0, 100),
-    email: (nestedProperty.get(json, 'customer.email') || '').substring(0, 100),
-    phone: (nestedProperty.get(json, 'shipping_address.phone') || '').substring(0, 50),
+    firstName: (nestedProperty.get(json, 'customer.first_name') || '').toString().substring(0, 100),
+    lastName: (nestedProperty.get(json, 'customer.last_name') || 'Anonymous').toString().substring(0, 100),
+    address: (getAddress(json) || 'No address').toString().substring(0, 100),
+    country_code: (nestedProperty.get(json, 'shipping_address.country_code') || 'NONE').toString().substring(0, 10),
+    zip: (nestedProperty.get(json, 'shipping_address.zip') || 'NONE').toString().substring(0, 10),
+    city: (nestedProperty.get(json, 'shipping_address.city') || 'NONE').toString().substring(0, 100),
+    email: (nestedProperty.get(json, 'customer.email') || '').toString().substring(0, 100),
+    phone: (nestedProperty.get(json, 'shipping_address.phone') || '').toString().substring(0, 50),
+    lineItems: (json.line_items || []).map(item => ({
+      product_id: nestedProperty.get(item, 'product_id') || "NONE",
+      quantity: nestedProperty.get(item, 'quantity'),
+      grams: nestedProperty.get(item, 'grams'),
+    })),
+    invoice: (nestedProperty.get(json, 'order_number') || "NONE").toString().substring(0, 50)
   }
 }
 
 function buildCSV(inputData) {
-  const data = {
-    header: '#H', // type: `#H` - shipping address; `#L` not need, you can skip this; `#P` - contains the goods
+  const header = {
+    header: '#H', // type: `#H` - shipping address; `#L` supplier, we can skip this; `#P` - contains the goods
     id: '', // delivery receipt number //TODO: get from DB
     date: '', // delivery date, if no delivery date is specified, Emons deliver as soon as possible
     lastName: inputData.lastName,
@@ -90,7 +119,14 @@ function buildCSV(inputData) {
     phone: inputData.phone,
   };
 
-  const schema = {
+  const lineItems = (inputData.lineItems || []).map((item, index) => ({
+    header: '#P',
+    invoice: inputData.invoice,
+    index: index + 1,
+
+  }));
+
+  const headerSchema = {
     header: { type: "string", min: 2, max: 2 },
     id: { type: "string", min: 1, max: 50 },
     date: { type: "string", min: 0, max: 10 },
@@ -105,8 +141,13 @@ function buildCSV(inputData) {
     phone: { type: "string", min: 0, max: 50 },
   };
 
-  if (validator.validate(data, schema)) {
-    const csvStringifier = csvWriter.createObjectCsvStringifier({
+  const lineItemsSchema = {};
+
+  let CSV;
+
+  const v = new Validator();
+  if (v.validate(header, headerSchema)) {
+    let csvStringifier = csvWriter.createObjectCsvStringifier({
       header: [
         { id: 'header' },
         { id: 'id' },
@@ -123,10 +164,26 @@ function buildCSV(inputData) {
       ]
     });
 
-    return csvStringifier.stringifyRecords([data]);
+    CSV = csvStringifier.stringifyRecords([header]);
   } else {
     return 'invalid data';
   }
+
+  if (v.validate(lineItems, lineItemsSchema)) {
+    let csvStringifier = csvWriter.createObjectCsvStringifier({
+      header: [
+        { id: 'header' },
+        { id: 'invoice' },
+        { id: 'index' },
+      ]
+    });
+
+    CSV += csvStringifier.stringifyRecords(lineItems);
+  } else {
+    return 'invalid data';
+  }
+
+  return CSV;
 }
 
 http.createServer(app).listen(process.env.HTTP_PORT || 80);

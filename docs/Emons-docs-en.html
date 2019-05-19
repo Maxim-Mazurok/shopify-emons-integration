@@ -1,5 +1,1150 @@
 <!--suppress ALL -->
-<html lang="en-x-mtfrom-de" class="gr__translate_googleusercontent_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",
-d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})();}).call(window);
-</script><script src="./Emons-docs-en_files/translate_c.js"></script><script>_intlStrings._originalText = "Original German text:";_intlStrings._interfaceDirection="ltr";_intlStrings._interfaceAlign="left";_intlStrings._langpair="de|en";_intlStrings._feedbackUrl="https://translate.google.com/translate_suggestion";_intlStrings._currentBy="Current translation on %1$s by %2$s";_intlStrings._unknown="unknown";_intlStrings._suggestTranslation="Contribute a better translation"  ;_intlStrings._submit="Contribute";_intlStrings._suggestThanks="Thank you for contributing your translation suggestion to Google Translate.";_intlStrings._reverse=false;_intlStrings._staticContentPath="https://www.gstatic.com/translate/infowindow/";</script><style type="text/css">.google-src-text {display: none !important} .google-src-active-text {display: block!important;color:black!important; font-size:12px!important;font-family:arial,sans-serif!important}.google-src-active-text a {font-size:12px!important}.google-src-active-text a:link {color:#00c!important;text-decoration:underline!important}.google-src-active-text a:visited {color:purple!important;text-decoration:underline!important}.google-src-active-text a:active {color:red!important;text-decoration:underline!important}</style><meta http-equiv="X-Translated-By" content="Google"><link href="https://translate.googleusercontent.com/Emons-docs.pdf" hreflang="de" rel="alternate machine-translated-from"><!--<base href="" target="_top">--><base href="." target="_top"><meta name="CreationDate" content="D:20190506151821+02&#39;00&#39;"><meta name="ModDate" content="D:20190506151821+02&#39;00&#39;"><meta name="Producer" content="Foxit Reader PDF Printer Version 9.0.1.1109"><title> Interface Description </title><link rel="stylesheet" type="text/css" href="./Emons-docs-en_files/iw_sprite.css"></head><body bgcolor="#ffffff" vlink="blue" link="blue" data-gr-c-s-loaded="true"><iframe src="./Emons-docs-en_files/translate_un.html" width="0" height="0" frameborder="0" style="width:0px;height:0px;border:0px;display:none;"></iframe><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><font face="arial,sans-serif"><a name="1"><b>Page 1</b></a></font></span> <font face="arial,sans-serif"><a name="1"><b>Page 1</b></a></font></span> </td></tr></tbody></table><div style="position:absolute;top:597;left:149"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Schnittstellenbeschreibung</nobr></span> <nobr>Interface Description</nobr></span> </div><div style="position:absolute;top:681;left:409"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Version 1.5</nobr></span> <nobr>Version 1.5</nobr></span> </div><div style="position:absolute;top:796;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>Inhaltsverzeichnis:</b></span> <b>Contents:</b></span> </div><div style="position:absolute;top:841;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>1. Allgemeine Anforderungen</b></span> <b>1. General requirements</b></span> </div><div style="position:absolute;top:870;left:160"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>1.1Dateiaufbau</b></span> <b>1.1Dateiaufbau</b></span> </div><div style="position:absolute;top:900;left:160"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>1.2Datensatzaufbau</b></span> <b>1.2Datensatzaufbau</b></span> </div><div style="position:absolute;top:929;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>2 Datenübertragung</b></span> <b>2 data transmission</b></span> </div><div style="position:absolute;top:1437;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><font face="arial,sans-serif"><a name="2"><b>Page 2</b></a></font></span> <font face="arial,sans-serif"><a name="2"><b>Page 2</b></a></font></span> </td></tr></tbody></table></div><div style="position:absolute;top:1585;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>1. Allgemeine Anforderungen</b></span> <b>1. General requirements</b></span> </div><div style="position:absolute;top:1633;left:133"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• Die Importdatei muss CSV Dateiformat besitzen.</nobr></span> <nobr>• The import file must be in CSV file format.</nobr></span> </div><div style="position:absolute;top:1657;left:133"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• Der Name der Datei ist beliebig, er muss lediglich eindeutig sein.</nobr></span> <nobr>• The name of the file is arbitrary, it only needs to be unique.</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Dazu bietet sich die</nobr></span> <nobr>This offers the</nobr></span> </div><div style="position:absolute;top:1679;left:160"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Lieferscheinnummer oder eine fortlaufende Nummerierung mit der Endung .csv als Name an.</nobr></span> <nobr>Delivery note number or consecutive numbering with the extension .csv as name.</nobr></span> </div><div style="position:absolute;top:1704;left:136"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• Als Trennzeichen zwischen den Datensätzen wird ein „|“ (Senkrechter Strich/Pipe)</nobr></span> <nobr>• The separator between the records is a "|" (vertical bar / pipe)</nobr></span> </div><div style="position:absolute;top:1726;left:163"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>verwendet.</nobr></span> <nobr>used.</nobr></span> </div><div style="position:absolute;top:1751;left:136"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• Nicht verwendete optionale Spalten (Bsp.: Empfänger Name 2,Charge oder Seriennummer)</nobr></span> <nobr>• Unused optional columns (eg: receiver name 2, batch or serial number)</nobr></span> </div><div style="position:absolute;top:1773;left:163"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>werden leer gelassen → siehe Beispieldatei</nobr></span> <nobr>are left empty → see sample file</nobr></span> </div><div style="position:absolute;top:1798;left:136"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• Als Dezimaltrennzeichen wird ein Komma verwendet (Bsp.: 3,15), es werden keine</nobr></span> <nobr>• The decimal separator is a comma (ex: 3,15), none are</nobr></span> </div><div style="position:absolute;top:1821;left:163"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Tausendertrennzeichen verwendet.</nobr></span> <nobr>Thousands separator used.</nobr></span> </div><div style="position:absolute;top:1846;left:136"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• In der Datei dürfen keine NULL Werte (00</nobr> <font style="font-size:8px">hex</font> ) vorkommen, ebenfalls ist das Zeilenenden mit</span> <nobr>• The file must not contain NULL values ​​(00</nobr> <font style="font-size:8px">hex</font> ), also the end of line is with</span> </div><div style="position:absolute;top:1868;left:163"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>einem „CR LF“ = carriage return(0d</nobr> <font style="font-size:8px">hex</font> ) und line feed(0a <font style="font-size:8px">hex</font> ) zu beenden.</span> to terminate <nobr>a "CR LF" = carriage return (0d</nobr> <font style="font-size:8px">hex</font> ) and line feed (0a <font style="font-size:8px">hex</font> ).</span> </div><div style="position:absolute;top:1891;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>1.1 Dateiaufbau</b></span> <b>1.1 File Construction</b></span> </div><div style="position:absolute;top:1929;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ein Auftrag besitzt immer einen Header (#H) und beliebig viele Positionen (#P).</nobr></span> <nobr>An order always has a header (#H) and any number of positions (#P).</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Das Segment (#L) ist</nobr></span> <nobr>The segment (#L) is</nobr></span> </div><div style="position:absolute;top:1952;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>optional und muss nicht verwendet werden.</nobr></span> <nobr>optional and does not need to be used.</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Es kann ein Auftrag pro Datei angelegt werden, ebenso</nobr></span> <nobr>One job can be created per file, as well</nobr></span> </div><div style="position:absolute;top:1976;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>ist es möglich mehrere Aufträge in einer Datei zusammenzufassen.</nobr></span> <nobr>It is possible to combine several orders in one file.</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Pro Auftrag sind dann separat die</nobr></span> <nobr>Per order are then separately the</nobr></span> </div><div style="position:absolute;top:1999;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Headerzeile gefolgt von den dazu gehörigen Positionszeilen aufzulisten.</nobr></span> <nobr>Header line followed by the corresponding item lines.</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Der nächste Auftrag</nobr></span> <nobr>The next order</nobr></span> </div><div style="position:absolute;top:2022;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>innerhalb einer Datei beginnt wieder mit der Headerzeile gefolgt von den Positionen.</nobr></span> <nobr>within a file starts again with the header line followed by the positions.</nobr></span> </div><div style="position:absolute;top:2060;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Beispiel: 7380.csv</nobr></span> <nobr>Example: 7380.csv</nobr></span> </div><div style="position:absolute;top:2213;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>1.2 Datensatzaufbau</b></span> <b>1.2 Record structure</b></span> </div><div style="position:absolute;top:2251;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spaltendefinition des Empfängers:</nobr></span> <nobr>Column definition of the recipient:</nobr></span> </div><div style="position:absolute;top:2290;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spalte Inhalt (Beispiel)</nobr></span> <nobr>Column Content (example)</nobr></span> </div><div style="position:absolute;top:2290;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Pflichtfeld Datentyp Anzahl Stellen</nobr> <font style="font-size:8px">1</font></span> <nobr>Mandatory field Data type Number of digits</nobr> <font style="font-size:8px">1</font></span> </div><div style="position:absolute;top:2290;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spaltenbezeichnung</nobr></span> <nobr>column name</nobr></span> </div><div style="position:absolute;top:2311;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span> </div><div style="position:absolute;top:2311;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#H</nobr></span> <nobr>#H</nobr></span> </div><div style="position:absolute;top:2311;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2311;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2311;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Fest</nobr></span> <nobr>Firmly</nobr></span> </div><div style="position:absolute;top:2311;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Identifier</nobr></span> <nobr>Identifier</nobr></span> </div><div style="position:absolute;top:2332;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>2</nobr></span> <nobr>2</nobr></span> </div><div style="position:absolute;top:2332;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>7380</nobr></span> <nobr>7380</nobr></span> </div><div style="position:absolute;top:2332;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2332;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2332;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-50</nobr></span> <nobr>1-50</nobr></span> </div><div style="position:absolute;top:2332;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Lieferscheinnummer</nobr></span> <nobr>delivery receipt number</nobr></span> </div><div style="position:absolute;top:2352;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>3</nobr></span> <nobr>3</nobr></span> </div><div style="position:absolute;top:2352;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>01.08.2016</nobr></span> <nobr>08/01/2016</nobr></span> </div><div style="position:absolute;top:2352;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2352;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2352;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-10</nobr></span> <nobr>1-10</nobr></span> </div><div style="position:absolute;top:2352;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Lieferdatum</nobr></span> <nobr>delivery date</nobr></span> </div><div style="position:absolute;top:2373;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>4</nobr></span> <nobr>4</nobr></span> </div><div style="position:absolute;top:2373;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Muster GmbH</nobr></span> <nobr>Muster GmbH</nobr></span> </div><div style="position:absolute;top:2373;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2373;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2373;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-100</nobr></span> <nobr>1-100</nobr></span> </div><div style="position:absolute;top:2373;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()" style=""><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Empfänger Name 1</nobr></span> <nobr>Recipient Name 1</nobr></span> </div><div style="position:absolute;top:2394;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>5</nobr></span> <nobr>5</nobr></span> </div><div style="position:absolute;top:2394;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Max</nobr></span> <nobr>Max</nobr></span> </div><div style="position:absolute;top:2394;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2394;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2394;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:2394;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Empfänger Name 2</nobr></span> <nobr>Recipient Name 2</nobr></span> </div><div style="position:absolute;top:2415;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>6</nobr></span> <nobr>6</nobr></span> </div><div style="position:absolute;top:2415;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Str. 1</nobr></span> <nobr>Str. 1</nobr></span> </div><div style="position:absolute;top:2415;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2415;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2415;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-100</nobr></span> <nobr>1-100</nobr></span> </div><div style="position:absolute;top:2415;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()" style=""><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Straße mit Hausnummer</nobr></span> <nobr>Street with house number</nobr></span> </div><div style="position:absolute;top:2436;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>7</nobr></span> <nobr>7</nobr></span> </div><div style="position:absolute;top:2436;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>DE</nobr></span> <nobr>DE</nobr></span> </div><div style="position:absolute;top:2436;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2436;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2436;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-10</nobr></span> <nobr>1-10</nobr></span> </div><div style="position:absolute;top:2436;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Länderkennzeichen</nobr></span> <nobr>country code</nobr></span> </div><div style="position:absolute;top:2457;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>8</nobr></span> <nobr>8th</nobr></span> </div><div style="position:absolute;top:2457;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>12345</nobr></span> <nobr>12345</nobr></span> </div><div style="position:absolute;top:2457;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2457;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2457;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-10</nobr></span> <nobr>1-10</nobr></span> </div><div style="position:absolute;top:2457;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Postleitzahl</nobr></span> <nobr>Post Code</nobr></span> </div><div style="position:absolute;top:2478;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>9</nobr></span> <nobr>9</nobr></span> </div><div style="position:absolute;top:2478;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Berlin</nobr></span> <nobr>Berlin</nobr></span> </div><div style="position:absolute;top:2478;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2478;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2478;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-100</nobr></span> <nobr>1-100</nobr></span> </div><div style="position:absolute;top:2478;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ort</nobr></span> <nobr>place</nobr></span> </div><div style="position:absolute;top:2499;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>10</nobr></span> <nobr>10</nobr></span> </div><div style="position:absolute;top:2499;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>A10054</nobr></span> <nobr>A10054</nobr></span> </div><div style="position:absolute;top:2499;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2499;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2499;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:2499;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Belegnummer</nobr></span> <nobr>document number</nobr></span> </div><div style="position:absolute;top:2520;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>11</nobr></span> <nobr>11</nobr></span> </div><div style="position:absolute;top:2520;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>max@muster.de</nobr></span> <nobr>max@muster.de</nobr></span> </div><div style="position:absolute;top:2520;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2520;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2520;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:2520;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>E-Mail Adresse</nobr></span> <nobr>e-mail address</nobr></span> </div><div style="position:absolute;top:2540;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>12</nobr></span> <nobr>12</nobr></span> </div><div style="position:absolute;top:2540;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0123456789</nobr></span> <nobr>0123456789</nobr></span> </div><div style="position:absolute;top:2540;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2540;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2540;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-50</nobr></span> <nobr>0-50</nobr></span> </div><div style="position:absolute;top:2540;left:606"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Telefonnummer</nobr></span> <nobr>phone number</nobr></span> </div><div style="position:absolute;top:2097;left:44"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#H|7380|01.08.2016|Muster GmbH|Max|Str.</nobr></span> <nobr>#H | 7380 | 01.08.2016 | Muster GmbH | Max | Str.</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1|DE|1245|Berlin|</nobr></span> <nobr>1 | EN | 1245 | Berlin |</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>A10054|max@muster.de|0123456789</nobr></span> <nobr>A10054|max@muster.de|0123456789</nobr></span> </div><div style="position:absolute;top:2113;left:44"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#L|035648|Supplier Spedition|Hauptstraße 3|DE|23456|Berlin</nobr></span> <nobr>#L | 035648 | Supplier Spedition | Main street 3 | DE | 23456 | Berlin</nobr></span> </div><div style="position:absolute;top:2128;left:44"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#P|7380|1|1051440|25|P201601|12.0TL01483520|300|100-10-1|</nobr></span> <nobr># P | 7380 | 1 | 1051440 | 25 | P201601 | 12.0TL01483520 | 300 | 100-10-1 |</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span> </div><div style="position:absolute;top:2143;left:44"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#P|7380|2|51124|8||18.0TL0165476|300||</nobr></span> <nobr># P | 7380 | 2 | 51124 | 8 || 18.0TL0165476 | 300 ||</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span> </div><div style="position:absolute;top:2158;left:44"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#P|7380|3|5589154|15|P20085||200||</nobr></span> <nobr># P | 7380 | 3 | 5589154 | 15 | P20085 || 200 ||</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span> </div><div style="position:absolute;top:2174;left:44"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#P|7380|4|22243446|10|||150|100-10-1|</nobr></span> <nobr># P | 7380 | 4 | 22243446 | 10 ||| 150 | 100-10-1 |</nobr></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span> </div><div style="position:absolute;top:2699;left:0"><hr><table border="0" width="100%"><tbody><tr><td bgcolor="eeeeee" align="right"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><font face="arial,sans-serif"><a name="3"><b>Page 3</b></a></font></span> <font face="arial,sans-serif"><a name="3"><b>Page 3</b></a></font></span> </td></tr></tbody></table></div><div style="position:absolute;top:2847;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spaltendefinition des Lieferanten:</nobr></span> <nobr>Column definition of the supplier:</nobr></span> </div><div style="position:absolute;top:2886;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spalte Inhalt (Beispiel)</nobr></span> <nobr>Column Content (example)</nobr></span> </div><div style="position:absolute;top:2886;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Pflichtfeld Datentyp Anzahl Stellen</nobr> <font style="font-size:8px">1</font></span> <nobr>Mandatory field Data type Number of digits</nobr> <font style="font-size:8px">1</font></span> </div><div style="position:absolute;top:2886;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spaltenbezeichnung</nobr></span> <nobr>column name</nobr></span> </div><div style="position:absolute;top:2907;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span> </div><div style="position:absolute;top:2907;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#L</nobr></span> <nobr>#L</nobr></span> </div><div style="position:absolute;top:2907;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:2907;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2907;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Fest</nobr></span> <nobr>Firmly</nobr></span> </div><div style="position:absolute;top:2907;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Identifier</nobr></span> <nobr>Identifier</nobr></span> </div><div style="position:absolute;top:2928;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>2</nobr></span> <nobr>2</nobr></span> </div><div style="position:absolute;top:2928;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>035648</nobr></span> <nobr>035648</nobr></span> </div><div style="position:absolute;top:2928;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2928;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2928;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:2928;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nummer</nobr></span> <nobr>number</nobr></span> </div><div style="position:absolute;top:2949;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>3</nobr></span> <nobr>3</nobr></span> </div><div style="position:absolute;top:2949;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Supplier Spedition</nobr></span> <nobr>Supplier forwarding</nobr></span> </div><div style="position:absolute;top:2949;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2949;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2949;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:2949;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Name</nobr></span> <nobr>Surname</nobr></span> </div><div style="position:absolute;top:2970;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>4</nobr></span> <nobr>4</nobr></span> </div><div style="position:absolute;top:2970;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Hauptstraße 3</nobr></span> <nobr>Main street 3</nobr></span> </div><div style="position:absolute;top:2970;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2970;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2970;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:2970;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Straße mit Hausnummer</nobr></span> <nobr>Street with house number</nobr></span> </div><div style="position:absolute;top:2991;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>5</nobr></span> <nobr>5</nobr></span> </div><div style="position:absolute;top:2991;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>DE</nobr></span> <nobr>DE</nobr></span> </div><div style="position:absolute;top:2991;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:2991;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:2991;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-10</nobr></span> <nobr>0-10</nobr></span> </div><div style="position:absolute;top:2991;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Länderkennzeichen</nobr></span> <nobr>country code</nobr></span> </div><div style="position:absolute;top:3012;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>6</nobr></span> <nobr>6</nobr></span> </div><div style="position:absolute;top:3012;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>23456</nobr></span> <nobr>23456</nobr></span> </div><div style="position:absolute;top:3012;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3012;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3012;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-10</nobr></span> <nobr>0-10</nobr></span> </div><div style="position:absolute;top:3012;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Postleitzahl</nobr></span> <nobr>Post Code</nobr></span> </div><div style="position:absolute;top:3033;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>7</nobr></span> <nobr>7</nobr></span> </div><div style="position:absolute;top:3033;left:168"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Berlin</nobr></span> <nobr>Berlin</nobr></span> </div><div style="position:absolute;top:3033;left:316"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3033;left:401"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3033;left:487"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:3033;left:604"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ort</nobr></span> <nobr>place</nobr></span> </div><div style="position:absolute;top:3093;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spaltendefinition der Position:</nobr></span> <nobr>Column definition of position:</nobr></span> </div><div style="position:absolute;top:3132;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spalte Inhalt (Beispiel)</nobr></span> <nobr>Column Content (example)</nobr></span> </div><div style="position:absolute;top:3132;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Pflichtfeld Datentyp Anzahl Stellen</nobr> <font style="font-size:8px">1</font></span> <nobr>Mandatory field Data type Number of digits</nobr> <font style="font-size:8px">1</font></span> </div><div style="position:absolute;top:3132;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Spaltenbezeichnung</nobr></span> <nobr>column name</nobr></span> </div><div style="position:absolute;top:3152;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span> </div><div style="position:absolute;top:3152;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>#P</nobr></span> <nobr>#P</nobr></span> </div><div style="position:absolute;top:3152;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:3152;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3152;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Fest</nobr></span> <nobr>Firmly</nobr></span> </div><div style="position:absolute;top:3152;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Identifier</nobr></span> <nobr>Identifier</nobr></span> </div><div style="position:absolute;top:3173;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>2</nobr></span> <nobr>2</nobr></span> </div><div style="position:absolute;top:3173;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>7380</nobr></span> <nobr>7380</nobr></span> </div><div style="position:absolute;top:3173;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:3173;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3173;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-50</nobr></span> <nobr>1-50</nobr></span> </div><div style="position:absolute;top:3173;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Lieferscheinnummer</nobr></span> <nobr>delivery receipt number</nobr></span> </div><div style="position:absolute;top:3194;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>3</nobr></span> <nobr>3</nobr></span> </div><div style="position:absolute;top:3194;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span> </div><div style="position:absolute;top:3194;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:3194;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Zahl</nobr></span> <nobr>number</nobr></span> </div><div style="position:absolute;top:3194;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-9</nobr></span> <nobr>1-9</nobr></span> </div><div style="position:absolute;top:3194;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Positionsnummer</nobr></span> <nobr>Position number</nobr></span> </div><div style="position:absolute;top:3215;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>4</nobr></span> <nobr>4</nobr></span> </div><div style="position:absolute;top:3215;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1051440</nobr></span> <nobr>1051440</nobr></span> </div><div style="position:absolute;top:3215;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:3215;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3215;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-50</nobr></span> <nobr>1-50</nobr></span> </div><div style="position:absolute;top:3215;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Artikelnummer</nobr></span> <nobr>item number</nobr></span> </div><div style="position:absolute;top:3236;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>5</nobr></span> <nobr>5</nobr></span> </div><div style="position:absolute;top:3236;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>25</nobr></span> <nobr>25</nobr></span> </div><div style="position:absolute;top:3236;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span> </div><div style="position:absolute;top:3236;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Zahl</nobr></span> <nobr>number</nobr></span> </div><div style="position:absolute;top:3236;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1-9</nobr></span> <nobr>1-9</nobr></span> </div><div style="position:absolute;top:3236;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Menge</nobr></span> <nobr>amount</nobr></span> </div><div style="position:absolute;top:3257;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>6</nobr></span> <nobr>6</nobr></span> </div><div style="position:absolute;top:3257;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>P201601</nobr></span> <nobr>P201601</nobr></span> </div><div style="position:absolute;top:3257;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3257;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3257;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:3257;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Charge</nobr></span> <nobr>charge</nobr></span> </div><div style="position:absolute;top:3278;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>7</nobr></span> <nobr>7</nobr></span> </div><div style="position:absolute;top:3278;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>12.0TL01483520</nobr></span> <nobr>12.0TL01483520</nobr></span> </div><div style="position:absolute;top:3278;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3278;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3278;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span> </div><div style="position:absolute;top:3278;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Seriennummer</nobr></span> <nobr>serial number</nobr></span> </div><div style="position:absolute;top:3299;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>8</nobr></span> <nobr>8th</nobr></span> </div><div style="position:absolute;top:3299;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>3000</nobr></span> <nobr>3000</nobr></span> </div><div style="position:absolute;top:3299;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3299;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Zahl</nobr></span> <nobr>number</nobr></span> </div><div style="position:absolute;top:3299;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-50</nobr></span> <nobr>0-50</nobr></span> </div><div style="position:absolute;top:3299;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Gewicht</nobr></span> <nobr>mass</nobr></span> </div><div style="position:absolute;top:3320;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>9</nobr></span> <nobr>9</nobr></span> </div><div style="position:absolute;top:3320;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>100-5-3</nobr></span> <nobr>100-5-3</nobr></span> </div><div style="position:absolute;top:3320;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3320;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3320;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-10</nobr></span> <nobr>0-10</nobr></span> </div><div style="position:absolute;top:3320;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Lagerplatz</nobr></span> <nobr>campsite</nobr></span> </div><div style="position:absolute;top:3341;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>10</nobr></span> <nobr>10</nobr></span> </div><div style="position:absolute;top:3341;left:164"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span> </div><div style="position:absolute;top:3341;left:309"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span> </div><div style="position:absolute;top:3341;left:394"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span> </div><div style="position:absolute;top:3341;left:472"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>0-50</nobr></span> <nobr>0-50</nobr></span> </div><div style="position:absolute;top:3341;left:608"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Bestellnummer</nobr></span> <nobr>Order number</nobr></span> </div><div style="position:absolute;top:3360;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>1</nobr> <font style="font-size:14px">Anzahl der Stellen in einer Spalte mit, je nach Datentyp, Zeichen von 0-9 und AZ sowie</font></span> <nobr>1</nobr> <font style="font-size:14px">Number of digits in a column with, depending on the data type, characters from 0-9 and AZ as well</font></span> </div><div style="position:absolute;top:3385;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>Sonderzeichen (ausgenommen ' und “).</nobr></span> <nobr>Special characters (except 'and').</nobr></span> </div><div style="position:absolute;top:3461;left:106"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><b>2. Datenübertragung</b></span> <b>2. Data transmission</b></span> </div><div style="position:absolute;top:3486;left:133"> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><nobr>• Für die Datenübertragung kann Emons einen FTP Server zur Verfügung stellen.</nobr></span> <nobr>• Emons can provide an FTP server for data transfer.</nobr></span> </div><!-- t3442r8a8c3442e3434n0u8l0m0k0 -->
-<script>_addload(function(){_setupIW('com');_csi('de','en','Emons-docs.pdf');});</script><span><div class="gmnoprint" style="z-index: 2147483647; position: absolute; left: 566px; top: 2274px; display: none;"><img src="./Emons-docs-en_files/iws_n.png" style="position: absolute; left: 11px; top: 3px; width: 199px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iws_n.png" style="position: absolute; left: 11px; top: 3px; width: 0px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iws_w.png" style="position: absolute; left: 3px; top: 11px; width: 8px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iws_e.png" style="position: absolute; left: 210px; top: 11px; width: 8px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iws_s.png" style="position: absolute; left: 11px; top: 75px; width: 84px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iws_s.png" style="position: absolute; left: 127px; top: 75px; width: 83px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iws_c.png" style="position: absolute; left: 11px; top: 11px; width: 199px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><div class="SPRITE_iws_nw" style="overflow: hidden; position: absolute; left: 3px; top: 3px;"></div><div class="SPRITE_iws_ne" style="overflow: hidden; position: absolute; left: 210px; top: 3px;"></div><div class="SPRITE_iws_sw" style="overflow: hidden; position: absolute; left: 3px; top: 75px;"></div><div class="SPRITE_iws_se" style="overflow: hidden; position: absolute; left: 210px; top: 75px;"></div><div class="SPRITE_iws_tap" style="overflow: hidden; position: absolute; left: 90px; top: 75px; display: none;"></div><div class="SPRITE_iws_tap_l" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tap_u" style="overflow: hidden; position: absolute; left: 6px; top: 0px; display: none;"></div><div class="SPRITE_iws_tap_ul" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tap_rd" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tap_ld" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tab_dl" style="overflow: hidden; position: absolute; left: 3px; top: 90px; display: none;"></div><div class="SPRITE_iws_tab_dr" style="overflow: hidden; position: absolute; left: -3px; top: 90px; display: none;"></div><div class="SPRITE_iws_tab_l" style="overflow: hidden; position: absolute; left: 3px; top: 3px; display: none;"></div><div class="SPRITE_iws_tab_r" style="overflow: hidden; position: absolute; left: -3px; top: 3px; display: none;"></div></div></span><div id="google-infowindow" class="notranslate"><div class="gmnoprint" style="z-index: 2147483647; position: absolute; left: 566px; top: 2274px; display: none;"><img src="./Emons-docs-en_files/iw_n.png" style="position: absolute; left: 6px; top: 0px; width: 199px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iw_n.png" style="position: absolute; left: 6px; top: 0px; width: 0px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iw_w.png" style="position: absolute; left: 0px; top: 6px; width: 6px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iw_e.png" style="position: absolute; left: 205px; top: 6px; width: 6px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iw_s0.png" style="position: absolute; left: 6px; top: 70px; width: 84px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iw_s0.png" style="position: absolute; left: 122px; top: 70px; width: 83px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img src="./Emons-docs-en_files/iw_c.png" style="position: absolute; left: 6px; top: 6px; width: 199px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><div class="SPRITE_iw_nw" style="overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div class="SPRITE_iw_ne" style="overflow: hidden; position: absolute; left: 205px; top: 0px;"></div><div class="SPRITE_iw_xtap" style="overflow: hidden; position: absolute; left: 90px; top: 70px; display: none;"></div><div class="SPRITE_iw_xtap_l" style="overflow: hidden; display: none;"></div><div class="SPRITE_iw_xtap_u" style="overflow: hidden; position: absolute; left: 6px; top: 0px; display: none;"></div><div class="SPRITE_iw_xtap_ul" style="overflow: hidden; display: none;"></div><div class="SPRITE_iw_xtap_rd" style="overflow: hidden; display: none;"></div><div class="SPRITE_iw_xtap_ld" style="overflow: hidden; display: none;"></div><div class="SPRITE_iw_sw0" style="overflow: hidden; position: absolute; left: 0px; top: 70px;"></div><div class="SPRITE_iw_se0" style="overflow: hidden; position: absolute; left: 205px; top: 70px;"></div><div class="SPRITE_close" style="overflow: hidden; z-index: 10000; cursor: pointer; visibility: visible; position: absolute; left: 191px; top: 6px;"></div><div class="SPRITE_maximize" style="overflow: hidden; z-index: 10000; cursor: pointer; display: none; position: absolute; left: 175px; top: 6px;"></div><div class="SPRITE_restore" style="overflow: hidden; z-index: 10001; visibility: hidden; cursor: pointer; display: none; position: absolute; left: 175px; top: 6px;"></div><div style="position: absolute; left: 8px; top: 8px; width: 195px; height: 60px; overflow: hidden; z-index: 10;"><div style="z-index: 9500;"><div style="margin: 0px 0px -17px; padding: 0px; text-align: right;"><img border="0" src="./Emons-docs-en_files/googlelogo_color_48x16dp.png" style="width: 48px; height: 16px; display: inline; padding: 0px; border: 0px solid black; margin-left: 6px; margin-right: 18px;"></div><div style="color: rgb(51, 51, 51); direction: ltr; text-align: left; font-weight: bold; font-size: 12px; min-height: 19px; font-family: arial, sans-serif; margin-right: 72px;">Original German text:</div><div class="google-src-active-text" style="line-height: 19px; direction: ltr; text-align: left;">Empfänger Name 1</div><div><div style="direction: ltr; text-align: left; margin-top: 5px;"><img src="./Emons-docs-en_files/zippy_plus_sm.gif" border="0" style="width: 12px; height: 12px; border: none; vertical-align: middle;"> <span style="direction: ltr; text-align: left; color: rgb(0, 0, 204); text-decoration: underline; font-family: arial, sans-serif; font-size: 12px; cursor: pointer;">Contribute a better translation</span></div></div></div></div></div></div><div style="display: none;"><iframe id="google-feedback-frame" name="" +="" feedback_target_iframe_name="" ""="" src="./Emons-docs-en_files/saved_resource.html"></iframe></div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
+<html lang="en-x-mtfrom-de" class="gr__translate_googleusercontent_com">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script>(function () {
+      (function () {
+        function e(g) {
+          this.t = {};
+          this.tick = function (h, k, f) {
+            this.t[h] = [void 0 != f ? f : (new Date).getTime(), k];
+            if (void 0 == f) try {
+              window.console.timeStamp("CSI/" + h)
+            } catch (m) {
+            }
+          };
+          this.tick("start", null, g)
+        }
+
+        var a;
+        if (window.performance) var d = (a = window.performance.timing) && a.responseStart;
+        var l = 0 < d ? new e(d) : new e;
+        window.jstiming = { Timer: e, load: l };
+        if (a) {
+          var b = a.navigationStart;
+          0 < b && d >= b && (window.jstiming.srt = d - b)
+        }
+        if (a) {
+          var c = window.jstiming.load;
+          0 < b && d >= b && (c.tick("_wtsrt", void 0, b), c.tick("wtsrt_", "_wtsrt",
+            d), c.tick("tbsd_", "wtsrt_"))
+        }
+        try {
+          a = null, window.chrome && window.chrome.csi && (a = Math.floor(window.chrome.csi().pageT), c && 0 < b && (c.tick("_tbnd", void 0, window.chrome.csi().startE), c.tick("tbnd_", "_tbnd", b))), null == a && window.gtbExternal && (a = window.gtbExternal.pageT()), null == a && window.external && (a = window.external.pageT, c && 0 < b && (c.tick("_tbnd", void 0, window.external.startE), c.tick("tbnd_", "_tbnd", b))), a && (window.jstiming.pt = a)
+        } catch (g) {
+        }
+      })();
+    }).call(window);
+    </script>
+    <script src="./Emons-docs-en_files/translate_c.js"></script>
+    <script>_intlStrings._originalText = "Original German text:";
+    _intlStrings._interfaceDirection = "ltr";
+    _intlStrings._interfaceAlign = "left";
+    _intlStrings._langpair = "de|en";
+    _intlStrings._feedbackUrl = "https://translate.google.com/translate_suggestion";
+    _intlStrings._currentBy = "Current translation on %1$s by %2$s";
+    _intlStrings._unknown = "unknown";
+    _intlStrings._suggestTranslation = "Contribute a better translation";
+    _intlStrings._submit = "Contribute";
+    _intlStrings._suggestThanks = "Thank you for contributing your translation suggestion to Google Translate.";
+    _intlStrings._reverse = false;
+    _intlStrings._staticContentPath = "https://www.gstatic.com/translate/infowindow/";</script>
+    <style type="text/css">.google-src-text {
+        display: none !important
+    }
+
+    .google-src-active-text {
+        display: block !important;
+        color: black !important;
+        font-size: 12px !important;
+        font-family: arial, sans-serif !important
+    }
+
+    .google-src-active-text a {
+        font-size: 12px !important
+    }
+
+    .google-src-active-text a:link {
+        color: #00c !important;
+        text-decoration: underline !important
+    }
+
+    .google-src-active-text a:visited {
+        color: purple !important;
+        text-decoration: underline !important
+    }
+
+    .google-src-active-text a:active {
+        color: red !important;
+        text-decoration: underline !important
+    }</style>
+    <link href="https://translate.googleusercontent.com/Emons-docs.pdf" hreflang="de"
+          rel="alternate machine-translated-from"><!--<base href="" target="_top">-->
+    <base href="." target="_top">
+    <meta name="CreationDate" content="D:20190506151821+02&#39;00&#39;">
+    <meta name="ModDate" content="D:20190506151821+02&#39;00&#39;">
+    <meta name="Producer" content="Foxit Reader PDF Printer Version 9.0.1.1109">
+    <title> Interface Description </title>
+    <link rel="stylesheet" type="text/css" href="./Emons-docs-en_files/iw_sprite.css">
+</head>
+<body bgcolor="#ffffff" vlink="blue" link="blue" data-gr-c-s-loaded="true">
+<iframe src="./Emons-docs-en_files/translate_un.html" width="0" height="0" frameborder="0"
+        style="width:0px;height:0px;border:0px;display:none;"></iframe>
+<table border="0" width="100%">
+    <tbody>
+    <tr>
+        <td bgcolor="eeeeee" align="right"><span class="notranslate" onmouseover="_tipon(this)"
+                                                 onmouseout="_tipoff()"><span class="google-src-text"
+                                                                              style="direction: ltr; text-align: left"><font
+                face="arial,sans-serif"><a name="1"><b>Page 1</b></a></font></span> <font face="arial,sans-serif"><a
+                name="1"><b>Page 1</b></a></font></span></td>
+    </tr>
+    </tbody>
+</table>
+<div style="position:absolute;top:597;left:149"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>Schnittstellenbeschreibung</nobr></span> <nobr>Interface Description</nobr></span>
+</div>
+<div style="position:absolute;top:681;left:409"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>Version 1.5</nobr></span> <nobr>Version 1.5</nobr></span>
+</div>
+<div style="position:absolute;top:796;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><b>Inhaltsverzeichnis:</b></span> <b>Contents:</b></span>
+</div>
+<div style="position:absolute;top:841;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><b>1. Allgemeine Anforderungen</b></span> <b>1. General requirements</b></span>
+</div>
+<div style="position:absolute;top:870;left:160"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><b>1.1Dateiaufbau</b></span> <b>1.1Dateiaufbau</b></span>
+</div>
+<div style="position:absolute;top:900;left:160"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><b>1.2Datensatzaufbau</b></span> <b>1.2Datensatzaufbau</b></span>
+</div>
+<div style="position:absolute;top:929;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><b>2 Datenübertragung</b></span> <b>2 data transmission</b></span>
+</div>
+<div style="position:absolute;top:1437;left:0">
+    <hr>
+    <table border="0" width="100%">
+        <tbody>
+        <tr>
+            <td bgcolor="eeeeee" align="right"><span class="notranslate" onmouseover="_tipon(this)"
+                                                     onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                  style="direction: ltr; text-align: left"><font
+                    face="arial,sans-serif"><a name="2"><b>Page 2</b></a></font></span> <font face="arial,sans-serif"><a
+                    name="2"><b>Page 2</b></a></font></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="position:absolute;top:1585;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><b>1. Allgemeine Anforderungen</b></span> <b>1. General requirements</b></span>
+</div>
+<div style="position:absolute;top:1633;left:133"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• Die Importdatei muss CSV Dateiformat besitzen.</nobr></span> <nobr>• The import file must be in CSV file format.</nobr></span>
+</div>
+<div style="position:absolute;top:1657;left:133"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• Der Name der Datei ist beliebig, er muss lediglich eindeutig sein.</nobr></span> <nobr>• The name of the file is arbitrary, it only needs to be unique.</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>Dazu bietet sich die</nobr></span> <nobr>This offers the</nobr></span>
+</div>
+<div style="position:absolute;top:1679;left:160"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Lieferscheinnummer oder eine fortlaufende Nummerierung mit der Endung .csv als Name an.</nobr></span> <nobr>Delivery note number or consecutive numbering with the extension .csv as name.</nobr></span>
+</div>
+<div style="position:absolute;top:1704;left:136"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• Als Trennzeichen zwischen den Datensätzen wird ein „|“ (Senkrechter Strich/Pipe)</nobr></span> <nobr>• The separator between the records is a "|" (vertical bar / pipe)</nobr></span>
+</div>
+<div style="position:absolute;top:1726;left:163"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>verwendet.</nobr></span> <nobr>used.</nobr></span>
+</div>
+<div style="position:absolute;top:1751;left:136"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• Nicht verwendete optionale Spalten (Bsp.: Empfänger Name 2,Charge oder Seriennummer)</nobr></span> <nobr>• Unused optional columns (eg: receiver name 2, batch or serial number)</nobr></span>
+</div>
+<div style="position:absolute;top:1773;left:163"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>werden leer gelassen → siehe Beispieldatei</nobr></span> <nobr>are left empty → see sample file</nobr></span>
+</div>
+<div style="position:absolute;top:1798;left:136"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• Als Dezimaltrennzeichen wird ein Komma verwendet (Bsp.: 3,15), es werden keine</nobr></span> <nobr>• The decimal separator is a comma (ex: 3,15), none are</nobr></span>
+</div>
+<div style="position:absolute;top:1821;left:163"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Tausendertrennzeichen verwendet.</nobr></span> <nobr>Thousands separator used.</nobr></span>
+</div>
+<div style="position:absolute;top:1846;left:136"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• In der Datei dürfen keine NULL Werte (00</nobr> <font
+        style="font-size:8px">hex</font> ) vorkommen, ebenfalls ist das Zeilenenden mit</span> <nobr>• The file must not contain NULL values ​​(00</nobr> <font
+        style="font-size:8px">hex</font> ), also the end of line is with</span></div>
+<div style="position:absolute;top:1868;left:163"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>einem „CR LF“ = carriage return(0d</nobr> <font
+        style="font-size:8px">hex</font> ) und line feed(0a <font style="font-size:8px">hex</font> ) zu beenden.</span> to terminate <nobr>a "CR LF" = carriage return (0d</nobr> <font
+        style="font-size:8px">hex</font> ) and line feed (0a <font style="font-size:8px">hex</font> ).</span></div>
+<div style="position:absolute;top:1891;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><b>1.1 Dateiaufbau</b></span> <b>1.1 File Construction</b></span>
+</div>
+<div style="position:absolute;top:1929;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ein Auftrag besitzt immer einen Header (#H) und beliebig viele Positionen (#P).</nobr></span> <nobr>An order always has a header (#H) and any number of positions (#P).</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>Das Segment (#L) ist</nobr></span> <nobr>The segment (#L) is</nobr></span>
+</div>
+<div style="position:absolute;top:1952;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>optional und muss nicht verwendet werden.</nobr></span> <nobr>optional and does not need to be used.</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>Es kann ein Auftrag pro Datei angelegt werden, ebenso</nobr></span> <nobr>One job can be created per file, as well</nobr></span>
+</div>
+<div style="position:absolute;top:1976;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>ist es möglich mehrere Aufträge in einer Datei zusammenzufassen.</nobr></span> <nobr>It is possible to combine several orders in one file.</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>Pro Auftrag sind dann separat die</nobr></span> <nobr>Per order are then separately the</nobr></span>
+</div>
+<div style="position:absolute;top:1999;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Headerzeile gefolgt von den dazu gehörigen Positionszeilen aufzulisten.</nobr></span> <nobr>Header line followed by the corresponding item lines.</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>Der nächste Auftrag</nobr></span> <nobr>The next order</nobr></span>
+</div>
+<div style="position:absolute;top:2022;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>innerhalb einer Datei beginnt wieder mit der Headerzeile gefolgt von den Positionen.</nobr></span> <nobr>within a file starts again with the header line followed by the positions.</nobr></span>
+</div>
+<div style="position:absolute;top:2060;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Beispiel: 7380.csv</nobr></span> <nobr>Example: 7380.csv</nobr></span>
+</div>
+<div style="position:absolute;top:2213;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><b>1.2 Datensatzaufbau</b></span> <b>1.2 Record structure</b></span>
+</div>
+<div style="position:absolute;top:2251;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spaltendefinition des Empfängers:</nobr></span> <nobr>Column definition of the recipient:</nobr></span>
+</div>
+<div style="position:absolute;top:2290;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spalte Inhalt (Beispiel)</nobr></span> <nobr>Column Content (example)</nobr></span>
+</div>
+<div style="position:absolute;top:2290;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Pflichtfeld Datentyp Anzahl Stellen</nobr> <font
+        style="font-size:8px">1</font></span> <nobr>Mandatory field Data type Number of digits</nobr> <font
+        style="font-size:8px">1</font></span></div>
+<div style="position:absolute;top:2290;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spaltenbezeichnung</nobr></span> <nobr>column name</nobr></span>
+</div>
+<div style="position:absolute;top:2311;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span>
+</div>
+<div style="position:absolute;top:2311;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>#H</nobr></span> <nobr>#H</nobr></span>
+</div>
+<div style="position:absolute;top:2311;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2311;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2311;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Fest</nobr></span> <nobr>Firmly</nobr></span>
+</div>
+<div style="position:absolute;top:2311;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Identifier</nobr></span> <nobr>Identifier</nobr></span>
+</div>
+<div style="position:absolute;top:2332;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>2</nobr></span> <nobr>2</nobr></span>
+</div>
+<div style="position:absolute;top:2332;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>7380</nobr></span> <nobr>7380</nobr></span>
+</div>
+<div style="position:absolute;top:2332;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2332;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2332;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-50</nobr></span> <nobr>1-50</nobr></span>
+</div>
+<div style="position:absolute;top:2332;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Lieferscheinnummer</nobr></span> <nobr>invoice number</nobr></span>
+</div>
+<div style="position:absolute;top:2352;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>3</nobr></span> <nobr>3</nobr></span>
+</div>
+<div style="position:absolute;top:2352;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>01.08.2016</nobr></span> <nobr>08/01/2016</nobr></span>
+</div>
+<div style="position:absolute;top:2352;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2352;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2352;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-10</nobr></span> <nobr>1-10</nobr></span>
+</div>
+<div style="position:absolute;top:2352;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Lieferdatum</nobr></span> <nobr>delivery date</nobr></span>
+</div>
+<div style="position:absolute;top:2373;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>4</nobr></span> <nobr>4</nobr></span>
+</div>
+<div style="position:absolute;top:2373;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Muster GmbH</nobr></span> <nobr>Muster GmbH</nobr></span>
+</div>
+<div style="position:absolute;top:2373;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2373;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2373;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-100</nobr></span> <nobr>1-100</nobr></span>
+</div>
+<div style="position:absolute;top:2373;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()" style=""><span class="google-src-text"
+                                                                                             style="direction: ltr; text-align: left"><nobr>Empfänger Name 1</nobr></span> <nobr>Recipient Name 1</nobr></span>
+</div>
+<div style="position:absolute;top:2394;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>5</nobr></span> <nobr>5</nobr></span>
+</div>
+<div style="position:absolute;top:2394;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Max</nobr></span> <nobr>Max</nobr></span>
+</div>
+<div style="position:absolute;top:2394;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2394;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2394;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:2394;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Empfänger Name 2</nobr></span> <nobr>Recipient Name 2</nobr></span>
+</div>
+<div style="position:absolute;top:2415;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>6</nobr></span> <nobr>6</nobr></span>
+</div>
+<div style="position:absolute;top:2415;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Str. 1</nobr></span> <nobr>Str. 1</nobr></span>
+</div>
+<div style="position:absolute;top:2415;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2415;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2415;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-100</nobr></span> <nobr>1-100</nobr></span>
+</div>
+<div style="position:absolute;top:2415;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()" style=""><span class="google-src-text"
+                                                                                             style="direction: ltr; text-align: left"><nobr>Straße mit Hausnummer</nobr></span> <nobr>Street with house number</nobr></span>
+</div>
+<div style="position:absolute;top:2436;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>7</nobr></span> <nobr>7</nobr></span>
+</div>
+<div style="position:absolute;top:2436;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>DE</nobr></span> <nobr>DE</nobr></span>
+</div>
+<div style="position:absolute;top:2436;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2436;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2436;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-10</nobr></span> <nobr>1-10</nobr></span>
+</div>
+<div style="position:absolute;top:2436;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Länderkennzeichen</nobr></span> <nobr>country code</nobr></span>
+</div>
+<div style="position:absolute;top:2457;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>8</nobr></span> <nobr>8th</nobr></span>
+</div>
+<div style="position:absolute;top:2457;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>12345</nobr></span> <nobr>12345</nobr></span>
+</div>
+<div style="position:absolute;top:2457;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2457;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2457;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-10</nobr></span> <nobr>1-10</nobr></span>
+</div>
+<div style="position:absolute;top:2457;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Postleitzahl</nobr></span> <nobr>Post Code</nobr></span>
+</div>
+<div style="position:absolute;top:2478;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>9</nobr></span> <nobr>9</nobr></span>
+</div>
+<div style="position:absolute;top:2478;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Berlin</nobr></span> <nobr>Berlin</nobr></span>
+</div>
+<div style="position:absolute;top:2478;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2478;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2478;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-100</nobr></span> <nobr>1-100</nobr></span>
+</div>
+<div style="position:absolute;top:2478;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ort</nobr></span> <nobr>city</nobr></span>
+</div>
+<div style="position:absolute;top:2499;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>10</nobr></span> <nobr>10</nobr></span>
+</div>
+<div style="position:absolute;top:2499;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>A10054</nobr></span> <nobr>A10054</nobr></span>
+</div>
+<div style="position:absolute;top:2499;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2499;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2499;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:2499;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Belegnummer</nobr></span> <nobr>document number</nobr></span>
+</div>
+<div style="position:absolute;top:2520;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>11</nobr></span> <nobr>11</nobr></span>
+</div>
+<div style="position:absolute;top:2520;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>max@muster.de</nobr></span> <nobr>max@muster.de</nobr></span>
+</div>
+<div style="position:absolute;top:2520;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2520;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2520;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:2520;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>E-Mail Adresse</nobr></span> <nobr>e-mail address</nobr></span>
+</div>
+<div style="position:absolute;top:2540;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>12</nobr></span> <nobr>12</nobr></span>
+</div>
+<div style="position:absolute;top:2540;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0123456789</nobr></span> <nobr>0123456789</nobr></span>
+</div>
+<div style="position:absolute;top:2540;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2540;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2540;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-50</nobr></span> <nobr>0-50</nobr></span>
+</div>
+<div style="position:absolute;top:2540;left:606"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Telefonnummer</nobr></span> <nobr>phone number</nobr></span>
+</div>
+<div style="position:absolute;top:2097;left:44"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>#H|7380|01.08.2016|Muster GmbH|Max|Str.</nobr></span> <nobr>#H | 7380 | 01.08.2016 | Muster GmbH | Max | Str.</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>1|DE|1245|Berlin|</nobr></span> <nobr>1 | EN | 1245 | Berlin |</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>A10054|max@muster.de|0123456789</nobr></span> <nobr>A10054|max@muster.de|0123456789</nobr></span>
+</div>
+<div style="position:absolute;top:2113;left:44"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>#L|035648|Supplier Spedition|Hauptstraße 3|DE|23456|Berlin</nobr></span> <nobr>#L | 035648 | Supplier Spedition | Main street 3 | DE | 23456 | Berlin</nobr></span>
+</div>
+<div style="position:absolute;top:2128;left:44"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>#P|7380|1|1051440|25|P201601|12.0TL01483520|300|100-10-1|</nobr></span> <nobr># P | 7380 | 1 | 1051440 | 25 | P201601 | 12.0TL01483520 | 300 | 100-10-1 |</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span>
+</div>
+<div style="position:absolute;top:2143;left:44"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>#P|7380|2|51124|8||18.0TL0165476|300||</nobr></span> <nobr># P | 7380 | 2 | 51124 | 8 || 18.0TL0165476 | 300 ||</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span>
+</div>
+<div style="position:absolute;top:2158;left:44"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>#P|7380|3|5589154|15|P20085||200||</nobr></span> <nobr># P | 7380 | 3 | 5589154 | 15 | P20085 || 200 ||</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span>
+</div>
+<div style="position:absolute;top:2174;left:44"><span class="notranslate" onmouseover="_tipon(this)"
+                                                      onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                   style="direction: ltr; text-align: left"><nobr>#P|7380|4|22243446|10|||150|100-10-1|</nobr></span> <nobr># P | 7380 | 4 | 22243446 | 10 ||| 150 | 100-10-1 |</nobr></span>
+    <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                      style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span>
+</div>
+<div style="position:absolute;top:2699;left:0">
+    <hr>
+    <table border="0" width="100%">
+        <tbody>
+        <tr>
+            <td bgcolor="eeeeee" align="right"><span class="notranslate" onmouseover="_tipon(this)"
+                                                     onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                  style="direction: ltr; text-align: left"><font
+                    face="arial,sans-serif"><a name="3"><b>Page 3</b></a></font></span> <font face="arial,sans-serif"><a
+                    name="3"><b>Page 3</b></a></font></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="position:absolute;top:2847;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spaltendefinition des Lieferanten:</nobr></span> <nobr>Column definition of the supplier:</nobr></span>
+</div>
+<div style="position:absolute;top:2886;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spalte Inhalt (Beispiel)</nobr></span> <nobr>Column Content (example)</nobr></span>
+</div>
+<div style="position:absolute;top:2886;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Pflichtfeld Datentyp Anzahl Stellen</nobr> <font
+        style="font-size:8px">1</font></span> <nobr>Mandatory field Data type Number of digits</nobr> <font
+        style="font-size:8px">1</font></span></div>
+<div style="position:absolute;top:2886;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spaltenbezeichnung</nobr></span> <nobr>column name</nobr></span>
+</div>
+<div style="position:absolute;top:2907;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span>
+</div>
+<div style="position:absolute;top:2907;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>#L</nobr></span> <nobr>#L</nobr></span>
+</div>
+<div style="position:absolute;top:2907;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:2907;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2907;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Fest</nobr></span> <nobr>Firmly</nobr></span>
+</div>
+<div style="position:absolute;top:2907;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Identifier</nobr></span> <nobr>Identifier</nobr></span>
+</div>
+<div style="position:absolute;top:2928;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>2</nobr></span> <nobr>2</nobr></span>
+</div>
+<div style="position:absolute;top:2928;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>035648</nobr></span> <nobr>035648</nobr></span>
+</div>
+<div style="position:absolute;top:2928;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2928;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2928;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:2928;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nummer</nobr></span> <nobr>number</nobr></span>
+</div>
+<div style="position:absolute;top:2949;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>3</nobr></span> <nobr>3</nobr></span>
+</div>
+<div style="position:absolute;top:2949;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Supplier Spedition</nobr></span> <nobr>Supplier forwarding</nobr></span>
+</div>
+<div style="position:absolute;top:2949;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2949;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2949;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:2949;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Name</nobr></span> <nobr>Surname</nobr></span>
+</div>
+<div style="position:absolute;top:2970;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>4</nobr></span> <nobr>4</nobr></span>
+</div>
+<div style="position:absolute;top:2970;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Hauptstraße 3</nobr></span> <nobr>Main street 3</nobr></span>
+</div>
+<div style="position:absolute;top:2970;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2970;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2970;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:2970;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Straße mit Hausnummer</nobr></span> <nobr>Street with house number</nobr></span>
+</div>
+<div style="position:absolute;top:2991;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>5</nobr></span> <nobr>5</nobr></span>
+</div>
+<div style="position:absolute;top:2991;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>DE</nobr></span> <nobr>DE</nobr></span>
+</div>
+<div style="position:absolute;top:2991;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:2991;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:2991;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-10</nobr></span> <nobr>0-10</nobr></span>
+</div>
+<div style="position:absolute;top:2991;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Länderkennzeichen</nobr></span> <nobr>country code</nobr></span>
+</div>
+<div style="position:absolute;top:3012;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>6</nobr></span> <nobr>6</nobr></span>
+</div>
+<div style="position:absolute;top:3012;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>23456</nobr></span> <nobr>23456</nobr></span>
+</div>
+<div style="position:absolute;top:3012;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3012;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3012;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-10</nobr></span> <nobr>0-10</nobr></span>
+</div>
+<div style="position:absolute;top:3012;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Postleitzahl</nobr></span> <nobr>Post Code</nobr></span>
+</div>
+<div style="position:absolute;top:3033;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>7</nobr></span> <nobr>7</nobr></span>
+</div>
+<div style="position:absolute;top:3033;left:168"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Berlin</nobr></span> <nobr>Berlin</nobr></span>
+</div>
+<div style="position:absolute;top:3033;left:316"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3033;left:401"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3033;left:487"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:3033;left:604"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ort</nobr></span> <nobr>city</nobr></span>
+</div>
+<div style="position:absolute;top:3093;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spaltendefinition der Position:</nobr></span> <nobr>Column definition of position:</nobr></span>
+</div>
+<div style="position:absolute;top:3132;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spalte Inhalt (Beispiel)</nobr></span> <nobr>Column Content (example)</nobr></span>
+</div>
+<div style="position:absolute;top:3132;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Pflichtfeld Datentyp Anzahl Stellen</nobr> <font
+        style="font-size:8px">1</font></span> <nobr>Mandatory field Data type Number of digits</nobr> <font
+        style="font-size:8px">1</font></span></div>
+<div style="position:absolute;top:3132;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Spaltenbezeichnung</nobr></span> <nobr>column name</nobr></span>
+</div>
+<div style="position:absolute;top:3152;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span>
+</div>
+<div style="position:absolute;top:3152;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>#P</nobr></span> <nobr>#P</nobr></span>
+</div>
+<div style="position:absolute;top:3152;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:3152;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3152;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Fest</nobr></span> <nobr>Firmly</nobr></span>
+</div>
+<div style="position:absolute;top:3152;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Identifier</nobr></span> <nobr>Identifier</nobr></span>
+</div>
+<div style="position:absolute;top:3173;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>2</nobr></span> <nobr>2</nobr></span>
+</div>
+<div style="position:absolute;top:3173;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>7380</nobr></span> <nobr>7380</nobr></span>
+</div>
+<div style="position:absolute;top:3173;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:3173;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3173;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-50</nobr></span> <nobr>1-50</nobr></span>
+</div>
+<div style="position:absolute;top:3173;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Lieferscheinnummer</nobr></span> <nobr>invoice number</nobr></span>
+</div>
+<div style="position:absolute;top:3194;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>3</nobr></span> <nobr>3</nobr></span>
+</div>
+<div style="position:absolute;top:3194;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1</nobr></span> <nobr>1</nobr></span>
+</div>
+<div style="position:absolute;top:3194;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:3194;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Zahl</nobr></span> <nobr>number</nobr></span>
+</div>
+<div style="position:absolute;top:3194;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-9</nobr></span> <nobr>1-9</nobr></span>
+</div>
+<div style="position:absolute;top:3194;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Positionsnummer</nobr></span> <nobr>Position number</nobr></span>
+</div>
+<div style="position:absolute;top:3215;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>4</nobr></span> <nobr>4</nobr></span>
+</div>
+<div style="position:absolute;top:3215;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1051440</nobr></span> <nobr>1051440</nobr></span>
+</div>
+<div style="position:absolute;top:3215;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:3215;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3215;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-50</nobr></span> <nobr>1-50</nobr></span>
+</div>
+<div style="position:absolute;top:3215;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Artikelnummer</nobr></span> <nobr>item number</nobr></span>
+</div>
+<div style="position:absolute;top:3236;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>5</nobr></span> <nobr>5</nobr></span>
+</div>
+<div style="position:absolute;top:3236;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>25</nobr></span> <nobr>25</nobr></span>
+</div>
+<div style="position:absolute;top:3236;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Ja</nobr></span> <nobr>Yes</nobr></span>
+</div>
+<div style="position:absolute;top:3236;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Zahl</nobr></span> <nobr>number</nobr></span>
+</div>
+<div style="position:absolute;top:3236;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1-9</nobr></span> <nobr>1-9</nobr></span>
+</div>
+<div style="position:absolute;top:3236;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Menge</nobr></span> <nobr>amount</nobr></span>
+</div>
+<div style="position:absolute;top:3257;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>6</nobr></span> <nobr>6</nobr></span>
+</div>
+<div style="position:absolute;top:3257;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>P201601</nobr></span> <nobr>P201601</nobr></span>
+</div>
+<div style="position:absolute;top:3257;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3257;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3257;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:3257;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Charge</nobr></span> <nobr>charge</nobr></span>
+</div>
+<div style="position:absolute;top:3278;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>7</nobr></span> <nobr>7</nobr></span>
+</div>
+<div style="position:absolute;top:3278;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>12.0TL01483520</nobr></span> <nobr>12.0TL01483520</nobr></span>
+</div>
+<div style="position:absolute;top:3278;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3278;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3278;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-100</nobr></span> <nobr>0-100</nobr></span>
+</div>
+<div style="position:absolute;top:3278;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Seriennummer</nobr></span> <nobr>serial number</nobr></span>
+</div>
+<div style="position:absolute;top:3299;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>8</nobr></span> <nobr>8th</nobr></span>
+</div>
+<div style="position:absolute;top:3299;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>3000</nobr></span> <nobr>3000</nobr></span>
+</div>
+<div style="position:absolute;top:3299;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3299;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Zahl</nobr></span> <nobr>number</nobr></span>
+</div>
+<div style="position:absolute;top:3299;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-50</nobr></span> <nobr>0-50</nobr></span>
+</div>
+<div style="position:absolute;top:3299;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Gewicht</nobr></span> <nobr>mass</nobr></span>
+</div>
+<div style="position:absolute;top:3320;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>9</nobr></span> <nobr>9</nobr></span>
+</div>
+<div style="position:absolute;top:3320;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>100-5-3</nobr></span> <nobr>100-5-3</nobr></span>
+</div>
+<div style="position:absolute;top:3320;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3320;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3320;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-10</nobr></span> <nobr>0-10</nobr></span>
+</div>
+<div style="position:absolute;top:3320;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Lagerplatz</nobr></span> <nobr>storage area</nobr></span>
+</div>
+<div style="position:absolute;top:3341;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>10</nobr></span> <nobr>10</nobr></span>
+</div>
+<div style="position:absolute;top:3341;left:164"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>P005478</nobr></span> <nobr>P005478</nobr></span>
+</div>
+<div style="position:absolute;top:3341;left:309"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Nein</nobr></span> <nobr>No</nobr></span>
+</div>
+<div style="position:absolute;top:3341;left:394"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Text</nobr></span> <nobr>text</nobr></span>
+</div>
+<div style="position:absolute;top:3341;left:472"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>0-50</nobr></span> <nobr>0-50</nobr></span>
+</div>
+<div style="position:absolute;top:3341;left:608"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Bestellnummer</nobr></span> <nobr>Order number</nobr></span>
+</div>
+<div style="position:absolute;top:3360;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>1</nobr> <font
+        style="font-size:14px">Anzahl der Stellen in einer Spalte mit, je nach Datentyp, Zeichen von 0-9 und AZ sowie</font></span> <nobr>1</nobr> <font
+        style="font-size:14px">Number of digits in a column with, depending on the data type, characters from 0-9 and AZ as well</font></span>
+</div>
+<div style="position:absolute;top:3385;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>Sonderzeichen (ausgenommen ' und “).</nobr></span> <nobr>Special characters (except 'and').</nobr></span>
+</div>
+<div style="position:absolute;top:3461;left:106"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><b>2. Datenübertragung</b></span> <b>2. Data transmission</b></span>
+</div>
+<div style="position:absolute;top:3486;left:133"><span class="notranslate" onmouseover="_tipon(this)"
+                                                       onmouseout="_tipoff()"><span class="google-src-text"
+                                                                                    style="direction: ltr; text-align: left"><nobr>• Für die Datenübertragung kann Emons einen FTP Server zur Verfügung stellen.</nobr></span> <nobr>• Emons can provide an FTP server for data transfer.</nobr></span>
+</div><!-- t3442r8a8c3442e3434n0u8l0m0k0 -->
+<script>_addload(function () {
+  _setupIW('com');
+  _csi('de', 'en', 'Emons-docs.pdf');
+});</script>
+<span><div class="gmnoprint"
+           style="z-index: 2147483647; position: absolute; left: 566px; top: 2274px; display: none;"><img
+        src="./Emons-docs-en_files/iws_n.png"
+        style="position: absolute; left: 11px; top: 3px; width: 199px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img
+        src="./Emons-docs-en_files/iws_n.png"
+        style="position: absolute; left: 11px; top: 3px; width: 0px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img
+        src="./Emons-docs-en_files/iws_w.png"
+        style="position: absolute; left: 3px; top: 11px; width: 8px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img
+        src="./Emons-docs-en_files/iws_e.png"
+        style="position: absolute; left: 210px; top: 11px; width: 8px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img
+        src="./Emons-docs-en_files/iws_s.png"
+        style="position: absolute; left: 11px; top: 75px; width: 84px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img
+        src="./Emons-docs-en_files/iws_s.png"
+        style="position: absolute; left: 127px; top: 75px; width: 83px; height: 8px; border: 0px; padding: 0px; margin: 0px;"><img
+        src="./Emons-docs-en_files/iws_c.png"
+        style="position: absolute; left: 11px; top: 11px; width: 199px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><div
+        class="SPRITE_iws_nw" style="overflow: hidden; position: absolute; left: 3px; top: 3px;"></div><div
+        class="SPRITE_iws_ne" style="overflow: hidden; position: absolute; left: 210px; top: 3px;"></div><div
+        class="SPRITE_iws_sw" style="overflow: hidden; position: absolute; left: 3px; top: 75px;"></div><div
+        class="SPRITE_iws_se" style="overflow: hidden; position: absolute; left: 210px; top: 75px;"></div><div
+        class="SPRITE_iws_tap"
+        style="overflow: hidden; position: absolute; left: 90px; top: 75px; display: none;"></div><div
+        class="SPRITE_iws_tap_l" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tap_u"
+                                                                                     style="overflow: hidden; position: absolute; left: 6px; top: 0px; display: none;"></div><div
+        class="SPRITE_iws_tap_ul" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tap_rd"
+                                                                                      style="overflow: hidden; display: none;"></div><div
+        class="SPRITE_iws_tap_ld" style="overflow: hidden; display: none;"></div><div class="SPRITE_iws_tab_dl"
+                                                                                      style="overflow: hidden; position: absolute; left: 3px; top: 90px; display: none;"></div><div
+        class="SPRITE_iws_tab_dr"
+        style="overflow: hidden; position: absolute; left: -3px; top: 90px; display: none;"></div><div
+        class="SPRITE_iws_tab_l"
+        style="overflow: hidden; position: absolute; left: 3px; top: 3px; display: none;"></div><div
+        class="SPRITE_iws_tab_r"
+        style="overflow: hidden; position: absolute; left: -3px; top: 3px; display: none;"></div></div></span>
+<div id="google-infowindow" class="notranslate">
+    <div class="gmnoprint" style="z-index: 2147483647; position: absolute; left: 566px; top: 2274px; display: none;">
+        <img src="./Emons-docs-en_files/iw_n.png"
+             style="position: absolute; left: 6px; top: 0px; width: 199px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img
+            src="./Emons-docs-en_files/iw_n.png"
+            style="position: absolute; left: 6px; top: 0px; width: 0px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img
+            src="./Emons-docs-en_files/iw_w.png"
+            style="position: absolute; left: 0px; top: 6px; width: 6px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img
+            src="./Emons-docs-en_files/iw_e.png"
+            style="position: absolute; left: 205px; top: 6px; width: 6px; height: 64px; border: 0px; padding: 0px; margin: 0px;"><img
+            src="./Emons-docs-en_files/iw_s0.png"
+            style="position: absolute; left: 6px; top: 70px; width: 84px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img
+            src="./Emons-docs-en_files/iw_s0.png"
+            style="position: absolute; left: 122px; top: 70px; width: 83px; height: 6px; border: 0px; padding: 0px; margin: 0px;"><img
+            src="./Emons-docs-en_files/iw_c.png"
+            style="position: absolute; left: 6px; top: 6px; width: 199px; height: 64px; border: 0px; padding: 0px; margin: 0px;">
+        <div class="SPRITE_iw_nw" style="overflow: hidden; position: absolute; left: 0px; top: 0px;"></div>
+        <div class="SPRITE_iw_ne" style="overflow: hidden; position: absolute; left: 205px; top: 0px;"></div>
+        <div class="SPRITE_iw_xtap"
+             style="overflow: hidden; position: absolute; left: 90px; top: 70px; display: none;"></div>
+        <div class="SPRITE_iw_xtap_l" style="overflow: hidden; display: none;"></div>
+        <div class="SPRITE_iw_xtap_u"
+             style="overflow: hidden; position: absolute; left: 6px; top: 0px; display: none;"></div>
+        <div class="SPRITE_iw_xtap_ul" style="overflow: hidden; display: none;"></div>
+        <div class="SPRITE_iw_xtap_rd" style="overflow: hidden; display: none;"></div>
+        <div class="SPRITE_iw_xtap_ld" style="overflow: hidden; display: none;"></div>
+        <div class="SPRITE_iw_sw0" style="overflow: hidden; position: absolute; left: 0px; top: 70px;"></div>
+        <div class="SPRITE_iw_se0" style="overflow: hidden; position: absolute; left: 205px; top: 70px;"></div>
+        <div class="SPRITE_close"
+             style="overflow: hidden; z-index: 10000; cursor: pointer; visibility: visible; position: absolute; left: 191px; top: 6px;"></div>
+        <div class="SPRITE_maximize"
+             style="overflow: hidden; z-index: 10000; cursor: pointer; display: none; position: absolute; left: 175px; top: 6px;"></div>
+        <div class="SPRITE_restore"
+             style="overflow: hidden; z-index: 10001; visibility: hidden; cursor: pointer; display: none; position: absolute; left: 175px; top: 6px;"></div>
+        <div style="position: absolute; left: 8px; top: 8px; width: 195px; height: 60px; overflow: hidden; z-index: 10;">
+            <div style="z-index: 9500;">
+                <div style="margin: 0px 0px -17px; padding: 0px; text-align: right;"><img border="0"
+                                                                                          src="./Emons-docs-en_files/googlelogo_color_48x16dp.png"
+                                                                                          style="width: 48px; height: 16px; display: inline; padding: 0px; border: 0px solid black; margin-left: 6px; margin-right: 18px;">
+                </div>
+                <div style="color: rgb(51, 51, 51); direction: ltr; text-align: left; font-weight: bold; font-size: 12px; min-height: 19px; font-family: arial, sans-serif; margin-right: 72px;">
+                    Original German text:
+                </div>
+                <div class="google-src-active-text" style="line-height: 19px; direction: ltr; text-align: left;">
+                    Empfänger Name 1
+                </div>
+                <div>
+                    <div style="direction: ltr; text-align: left; margin-top: 5px;"><img
+                            src="./Emons-docs-en_files/zippy_plus_sm.gif" border="0"
+                            style="width: 12px; height: 12px; border: none; vertical-align: middle;"> <span
+                            style="direction: ltr; text-align: left; color: rgb(0, 0, 204); text-decoration: underline; font-family: arial, sans-serif; font-size: 12px; cursor: pointer;">Contribute a better translation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span
+        class="gr__triangle"></span></span></html>
