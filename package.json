@@ -1,0 +1,22 @@
+{
+  "name": "shopify-emons-integration",
+  "author": {
+    "name": "Maxim Mazurok",
+    "email": "maxim@mazurok.com",
+    "url": "https://maxim.mazurok.com"
+  },
+  "version": "1.0.0",
+  "description": "Integration between Shopify store and Emons shipping",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shopify",
+    "emons",
+    "ecommerce",
+    "shipping",
+    "dropshipping"
+  ],
+  "license": "MIT"
+}
