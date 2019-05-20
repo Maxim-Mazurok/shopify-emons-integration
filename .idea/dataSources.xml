@@ -16,7 +16,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="@172.17.0.2" uuid="b23c7ea0-a94a-46ed-af19-50b3fa042dbe">
+    <data-source source="LOCAL" name="docker" uuid="b23c7ea0-a94a-46ed-af19-50b3fa042dbe">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

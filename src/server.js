@@ -8,6 +8,7 @@ const crypto = require('crypto');
 const Validator = require("fastest-validator");
 const csvWriter = require('csv-writer');
 const nestedProperty = require("nested-property");
+const { addOrder } = require("./db");
 
 const app = express();
 app.use(bodyParser.text({ type: 'json' }));
@@ -15,9 +16,8 @@ app.use(bodyParser.text({ type: 'json' }));
 app.post('/', (req, res) => {
   res.end();
 
-  console.log(req.body);
+  const rawJSON = req.body;
   const json = JSON.parse(req.body);
-  console.log(json);
   const XShopifyTopic = req.get('X-Shopify-Topic');
   const XShopifyHmacSha256 = req.get('X-Shopify-Hmac-Sha256');
   const XShopifyShopDomain = req.get('X-Shopify-Shop-Domain');
@@ -32,7 +32,9 @@ app.post('/', (req, res) => {
     // data is signed correctly
 
     if (checkOrder(json) === true) {
-      console.log(buildCSV(parseOrder(json)));
+      buildCSV(parseOrder(json), rawJSON)
+        .then(csv => console.log(csv))
+        .catch(error => console.error(error));
     } else {
       console.log('data is not ok')
     }
@@ -103,87 +105,97 @@ function parseOrder(json) {
   }
 }
 
-function buildCSV(inputData) {
-  const header = {
-    header: '#H', // type: `#H` - shipping address; `#L` supplier, we can skip this; `#P` - contains the goods
-    id: '', // delivery receipt number //TODO: get from DB
-    date: '', // delivery date, if no delivery date is specified, Emons deliver as soon as possible
-    lastName: inputData.lastName,
-    firstName: inputData.firstName,
-    address: inputData.address, // street with house number
-    country_code: inputData.country_code,
-    zip: inputData.zip,
-    city: inputData.city,
-    document_number: '', // document number is optional and IDK what that means. Seems like SKU to me, i.e. A10054
-    email: inputData.email,
-    phone: inputData.phone,
-  };
+function buildCSV(inputData, json) {
+  return new Promise((resolve, reject) => {
+    const header = {
+      header: '#H', // type: `#H` - shipping address; `#L` supplier, we can skip this; `#P` - contains the goods
+      id: '', // delivery receipt number, being set later in code, from DB
+      date: '', // delivery date, if no delivery date is specified, Emons deliver as soon as possible
+      lastName: inputData.lastName,
+      firstName: inputData.firstName,
+      address: inputData.address, // street with house number
+      country_code: inputData.country_code,
+      zip: inputData.zip,
+      city: inputData.city,
+      document_number: '', // document number is optional and IDK what that means. Seems like SKU to me, i.e. A10054
+      email: inputData.email,
+      phone: inputData.phone,
+    };
 
-  const lineItems = (inputData.lineItems || []).map((item, index) => ({
-    header: '#P',
-    invoice: inputData.invoice,
-    index: index + 1,
+    const lineItems = (inputData.lineItems || []).map((item, index) => ({
+      header: '#P',
+      invoice: inputData.invoice,
+      index: index + 1,
 
-  }));
+    }));
 
-  const headerSchema = {
-    header: { type: "string", min: 2, max: 2 },
-    id: { type: "string", min: 1, max: 50 },
-    date: { type: "string", min: 0, max: 10 },
-    lastName: { type: "string", min: 1, max: 10 },
-    firstName: { type: "string", min: 0, max: 100 },
-    address: { type: "string", min: 1, max: 100 },
-    country_code: { type: "string", min: 1, max: 10 },
-    zip: { type: "string", min: 1, max: 10 },
-    city: { type: "string", min: 1, max: 100 },
-    document_number: { type: "string", min: 0, max: 100 },
-    email: { type: "string", min: 0, max: 100 },
-    phone: { type: "string", min: 0, max: 50 },
-  };
+    const headerSchema = {
+      header: { type: "string", min: 2, max: 2 },
+      id: { type: "string", min: 1, max: 50 },
+      date: { type: "string", min: 0, max: 10 },
+      lastName: { type: "string", min: 1, max: 10 },
+      firstName: { type: "string", min: 0, max: 100 },
+      address: { type: "string", min: 1, max: 100 },
+      country_code: { type: "string", min: 1, max: 10 },
+      zip: { type: "string", min: 1, max: 10 },
+      city: { type: "string", min: 1, max: 100 },
+      document_number: { type: "string", min: 0, max: 100 },
+      email: { type: "string", min: 0, max: 100 },
+      phone: { type: "string", min: 0, max: 50 },
+    };
 
-  const lineItemsSchema = {};
+    const lineItemsSchema = {};
 
-  let CSV;
+    const v = new Validator();
+    let headerCSVStringifier;
+    if (v.validate(header, headerSchema)) {
+      headerCSVStringifier = csvWriter.createObjectCsvStringifier({
+        header: [
+          { id: 'header' },
+          { id: 'id' },
+          { id: 'date' },
+          { id: 'lastName' },
+          { id: 'firstName' },
+          { id: 'address' },
+          { id: 'country_code' },
+          { id: 'zip' },
+          { id: 'city' },
+          { id: 'document_number' },
+          { id: 'email' },
+          { id: 'phone' },
+        ]
+      });
+    } else {
+      reject('invalid data');
+    }
 
-  const v = new Validator();
-  if (v.validate(header, headerSchema)) {
-    let csvStringifier = csvWriter.createObjectCsvStringifier({
-      header: [
-        { id: 'header' },
-        { id: 'id' },
-        { id: 'date' },
-        { id: 'lastName' },
-        { id: 'firstName' },
-        { id: 'address' },
-        { id: 'country_code' },
-        { id: 'zip' },
-        { id: 'city' },
-        { id: 'document_number' },
-        { id: 'email' },
-        { id: 'phone' },
-      ]
-    });
+    let lineItemsCSV = '';
 
-    CSV = csvStringifier.stringifyRecords([header]);
-  } else {
-    return 'invalid data';
-  }
+    if (v.validate(lineItems, lineItemsSchema)) {
+      let csvStringifier = csvWriter.createObjectCsvStringifier({
+        header: [
+          { id: 'header' },
+          { id: 'invoice' },
+          { id: 'index' },
+        ]
+      });
 
-  if (v.validate(lineItems, lineItemsSchema)) {
-    let csvStringifier = csvWriter.createObjectCsvStringifier({
-      header: [
-        { id: 'header' },
-        { id: 'invoice' },
-        { id: 'index' },
-      ]
-    });
+      lineItemsCSV += csvStringifier.stringifyRecords(lineItems);
+    } else {
+      reject('invalid data');
+    }
 
-    CSV += csvStringifier.stringifyRecords(lineItems);
-  } else {
-    return 'invalid data';
-  }
-
-  return CSV;
+    addOrder(json)
+      .then(orderId => {
+        header.id = orderId;
+        const headerCSV = headerCSVStringifier.stringifyRecords([header]);
+        resolve(headerCSV + lineItemsCSV);
+      })
+      .catch(error => {
+        console.error(error);
+        reject('error adding order to DB');
+      });
+  });
 }
 
 http.createServer(app).listen(process.env.HTTP_PORT || 80);

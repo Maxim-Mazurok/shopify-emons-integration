@@ -19,28 +19,29 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-// function addOrder() {
-//   const Order = sequelize.define('order', {
-//     type: { type: Sequelize.STRING(20) },
-//     order: { type: Sequelize.INTEGER, defaultValue: 1 }
-//   }, {
-//     timestamps: false,
-//     underscored: true
-//   });
-//
-//   Order.__factory = { autoIncrementField: 'id' };
-//   Order.id = '';
-//
-//   // sequelize.query('INSERT INTO pages SET `type` = ?, `order` = ?, `topic_version_id` = ?', Order, { raw: false }, ['TEXT', 1, 1])
-//   //   .success(function (page) {
-//   //     console.log(page)
-//   //     Order.find(page.id)
-//   //       .success(function (result) {
-//   //         console.log(result)
-//   //       })
-//   //
-//   //   })
-// }
+const addOrder = json => {
+  return new Promise(((resolve, reject) => {
+    const Order = sequelize.define('order', {
+      id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+      json: { type: Sequelize.TEXT }
+    }, {
+      timestamps: false,
+      underscored: true
+    });
+    Order.sync({ force: process.env.FORCE_DB_SYNC === "true" || false }).then(() => {
+      Order.create({ id: '', json }).then(order => {
+        resolve(order.id);
+      })
+    }).catch(error => {
+      console.error(error);
+      reject(error);
+    });
+  }));
+};
+
+module.exports = {
+  addOrder
+};
 
 //
 // class User extends Sequelize.Model {
