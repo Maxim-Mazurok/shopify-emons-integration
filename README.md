@@ -23,7 +23,7 @@ Change parameters accordingly.
   - `DB_NAME` - *required* - database name
   - `DB_HOST` - IP or domain name, defaults to `localhost`
   - `DB_PORT` - port, defaults to `3306`
-  - `FORCE_DB_SYNC` - set to `true` if you want to reset you DB **will RESET your orders table** (i.e., delete all orders)
+  - `FORCE_DB_SYNC` - set to `true` if you want to reset you DB - **will RESET your orders table** (i.e., delete all orders)
 - SSL/HTTP:
   - `SSL_PRIVATE_KEY` - *required for production* - full path to your private key (`-----BEGIN PRIVATE KEY-----`...)
   - `SSL_CERTIFICATE` - *required for production* - full path to your certificate (`-----BEGIN CERTIFICATE-----`...)
