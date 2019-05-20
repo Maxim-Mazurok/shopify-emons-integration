@@ -8,6 +8,7 @@ const crypto = require('crypto');
 const Validator = require("fastest-validator");
 const csvWriter = require('csv-writer');
 const nestedProperty = require("nested-property");
+const { uploadCSV } = require("./ftp-upload");
 const { addOrder } = require("./db");
 
 const app = express();
@@ -33,7 +34,7 @@ app.post('/', (req, res) => {
 
     if (checkOrder(json) === true) {
       buildCSV(parseOrder(json), rawJSON)
-        .then(csv => console.log(csv))
+        .then(data => console.log(uploadCSV(data.csv, data.orderId)))
         .catch(error => console.error(error));
     } else {
       console.log('data is not ok')
@@ -124,9 +125,9 @@ function buildCSV(inputData, json) {
 
     const lineItems = (inputData.lineItems || []).map((item, index) => ({
       header: '#P',
-      invoice: inputData.invoice,
-      index: index + 1,
-
+      invoice: inputData.invoice.toString().substring(0, 50),
+      index: parseInt((index + 1).toString().substring(0, 9)),
+      // TODO: add more
     }));
 
     const headerSchema = {
@@ -144,7 +145,11 @@ function buildCSV(inputData, json) {
       phone: { type: "string", min: 0, max: 50 },
     };
 
-    const lineItemsSchema = {};
+    const lineItemsSchema = {
+      header: { type: "string", min: 2, max: 2 },
+      invoice: { type: "string", min: 1, max: 50 },
+      index: { type: "number", positive: true, integer: true, min: 0, max: 999999999 },
+    };
 
     const v = new Validator();
     let headerCSVStringifier;
@@ -189,7 +194,10 @@ function buildCSV(inputData, json) {
       .then(orderId => {
         header.id = orderId;
         const headerCSV = headerCSVStringifier.stringifyRecords([header]);
-        resolve(headerCSV + lineItemsCSV);
+        resolve({
+          csv: headerCSV + lineItemsCSV,
+          orderId,
+        });
       })
       .catch(error => {
         console.error(error);

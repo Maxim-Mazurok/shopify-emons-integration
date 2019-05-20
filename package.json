@@ -25,6 +25,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "fastest-validator": "^0.6.17",
+    "ftp": "^0.3.10",
     "mysql2": "^1.6.5",
     "nested-property": "0.0.7",
     "sequelize": "^5.8.6"
