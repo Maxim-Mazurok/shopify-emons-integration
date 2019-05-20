@@ -6,10 +6,17 @@ const https = require('https');
 const http = require('http');
 const crypto = require('crypto');
 const Validator = require("fastest-validator");
-const csvWriter = require('csv-writer');
+const csvWriter = require('csvwriter');
 const nestedProperty = require("nested-property");
 const { uploadCSV } = require("./ftp-upload");
 const { addOrder } = require("./db");
+
+const csvWriterOptions = {
+  header: false,
+  delimiter: '|',
+  decimalSeparator: ',',
+  crlf: true,
+};
 
 const app = express();
 app.use(bodyParser.text({ type: 'json' }));
@@ -157,55 +164,33 @@ function buildCSV(inputData, json) {
     };
 
     const v = new Validator();
-    let headerCSVStringifier;
-    if (v.validate(header, headerSchema)) {
-      headerCSVStringifier = csvWriter.createObjectCsvStringifier({
-        header: [
-          { id: 'header' },
-          { id: 'id' },
-          { id: 'date' },
-          { id: 'lastName' },
-          { id: 'firstName' },
-          { id: 'address' },
-          { id: 'country_code' },
-          { id: 'zip' },
-          { id: 'city' },
-          { id: 'document_number' },
-          { id: 'email' },
-          { id: 'phone' },
-        ]
-      });
-    } else {
-      reject('invalid data');
-    }
 
-    let lineItemsCSV = '';
-
-    if (v.validate(lineItems, lineItemsSchema)) {
-      let csvStringifier = csvWriter.createObjectCsvStringifier({
-        header: [
-          { id: 'header' },
-          { id: 'invoice' },
-          { id: 'index' },
-          { id: 'product_id' },
-          { id: 'quantity' },
-        ]
-      });
-
-      lineItemsCSV += csvStringifier.stringifyRecords(lineItems);
-    } else {
+    if (!v.validate(header, headerSchema) || !v.validate(lineItems, lineItemsSchema)) {
       reject('invalid data');
     }
 
     addOrder(json)
       .then(orderId => {
         header.id = orderId;
-        const headerCSV = headerCSVStringifier.stringifyRecords([header]);
-        const csv = headerCSV + lineItemsCSV;
-        console.log(csv);
-        resolve({
-          csv,
-          orderId,
+        csvWriter(header, csvWriterOptions, function (error, headerCSV) {
+          if (error) {
+            console.error(error);
+            reject('error writing csv');
+          }
+
+          csvWriter(lineItems, csvWriterOptions, function (error, lineItemsCSV) {
+            if (error) {
+              console.error(error);
+              reject('error writing csv');
+            }
+
+            const csv = headerCSV + lineItemsCSV;
+            console.log(csv);
+            resolve({
+              csv,
+              orderId,
+            });
+          });
         });
       })
       .catch(error => {
