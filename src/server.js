@@ -105,8 +105,8 @@ function parseOrder(json) {
     phone: (nestedProperty.get(json, 'shipping_address.phone') || '').toString().substring(0, 50).replace(/['"]/g, ''),
     lineItems: (json.line_items || []).map(item => ({
       product_id: (nestedProperty.get(item, 'product_id') || "NONE").toString().substring(0, 50).replace(/['"]/g, ''),
-      quantity: parseInt(nestedProperty.get(item, 'quantity').toString().substring(0, 9).replace(/['"]/g, '')),
-      grams: parseInt(nestedProperty.get(item, 'grams').toString().substring(0, 50).replace(/['"]/g, '')),
+      quantity: parseInt((nestedProperty.get(item, 'quantity') || 1).toString().substring(0, 9).replace(/['"]/g, '')),
+      grams: parseInt((nestedProperty.get(item, 'grams') || 0).toString().substring(0, 50).replace(/['"]/g, '')),
       requires_shipping: nestedProperty.get(item, 'requires_shipping') || false,
     })),
     invoice: (nestedProperty.get(json, 'order_number') || "NONE").toString().substring(0, 50).replace(/['"]/g, ''),
@@ -138,6 +138,11 @@ function buildCSV(inputData, json) {
         index: parseInt((index + 1).toString().substring(0, 9).replace(/['"]/g, '')),
         product_id: item.product_id,
         quantity: item.quantity,
+        charge: undefined,
+        serialNumber: undefined,
+        mass: item.grams,
+        storageArea: undefined,
+        orderNumber: undefined,
       }));
 
     const headerSchema = {
@@ -161,6 +166,11 @@ function buildCSV(inputData, json) {
       index: { type: "number", positive: true, integer: true, min: 0, max: 999999999 },
       product_id: { type: "string", min: 1, max: 50 },
       quantity: { type: "number", positive: true, integer: true, min: 0, max: 999999999 },
+      charge: { type: "string", min: 0, max: 100, optional: true }, // ???
+      serialNumber: { type: "string", min: 0, max: 100, optional: true },
+      mass: { type: "number", min: 0, max: 99999999999999999999999999999999999999999999999999, optional: true },
+      storageArea: { type: "string", min: 0, max: 10, optional: true },
+      orderNumber: { type: "string", min: 0, max: 50, optional: true },
     };
 
     const v = new Validator();
