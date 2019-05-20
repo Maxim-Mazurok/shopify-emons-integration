@@ -45,14 +45,14 @@ app.post('/', (req, res) => {
 function checkOrder(json) {
   const schema = {
     customer: {
-      type: "object", props: {
+      type: "object", optional: true, props: {
         first_name: { type: "string", optional: true },
         last_name: { type: "string", optional: true },
         email: { type: "string", optional: true },
       }
     },
     shipping_address: {
-      type: "object", props: {
+      type: "object", optional: true, props: {
         address1: { type: "string", optional: true },
         address2: { type: "string", optional: true },
         country_code: { type: "string", optional: true },
@@ -62,14 +62,15 @@ function checkOrder(json) {
       }
     },
     line_items: {
-      type: "array", min: 1, items: {
+      type: "array", min: 1, optional: true, items: {
         type: "object", props: {
           product_id: { type: "number", optional: true },
           quantity: { type: "number", optional: true },
           grams: { type: "number", optional: true },
         }
       }
-    }
+    },
+    order_number: { type: "number", optional: true }
   };
   if (process.env.DEV !== "true") {
     schema.financial_status = { type: "string", pattern: /^paid$/g }; // process only paid orders
@@ -86,23 +87,22 @@ function parseOrder(json) {
     return address2 ? `${address1}; ${address2}` : address1;
   };
 
-  // if requires_shipping ...
-
   return {
-    firstName: (nestedProperty.get(json, 'customer.first_name') || '').toString().substring(0, 100),
-    lastName: (nestedProperty.get(json, 'customer.last_name') || 'Anonymous').toString().substring(0, 100),
-    address: (getAddress(json) || 'No address').toString().substring(0, 100),
-    country_code: (nestedProperty.get(json, 'shipping_address.country_code') || 'NONE').toString().substring(0, 10),
-    zip: (nestedProperty.get(json, 'shipping_address.zip') || 'NONE').toString().substring(0, 10),
-    city: (nestedProperty.get(json, 'shipping_address.city') || 'NONE').toString().substring(0, 100),
-    email: (nestedProperty.get(json, 'customer.email') || '').toString().substring(0, 100),
-    phone: (nestedProperty.get(json, 'shipping_address.phone') || '').toString().substring(0, 50),
+    firstName: (nestedProperty.get(json, 'customer.first_name') || '').toString().substring(0, 100).replace(/['"]/g, ''),
+    lastName: (nestedProperty.get(json, 'customer.last_name') || 'Anonymous').toString().substring(0, 100).replace(/['"]/g, ''),
+    address: (getAddress(json) || 'No address').toString().substring(0, 100).replace(/['"]/g, ''),
+    country_code: (nestedProperty.get(json, 'shipping_address.country_code') || 'NONE').toString().substring(0, 10).replace(/['"]/g, ''),
+    zip: (nestedProperty.get(json, 'shipping_address.zip') || 'NONE').toString().substring(0, 10).replace(/['"]/g, ''),
+    city: (nestedProperty.get(json, 'shipping_address.city') || 'NONE').toString().substring(0, 100).replace(/['"]/g, ''),
+    email: (nestedProperty.get(json, 'customer.email') || '').toString().substring(0, 100).replace(/['"]/g, ''),
+    phone: (nestedProperty.get(json, 'shipping_address.phone') || '').toString().substring(0, 50).replace(/['"]/g, ''),
     lineItems: (json.line_items || []).map(item => ({
-      product_id: nestedProperty.get(item, 'product_id') || "NONE",
-      quantity: nestedProperty.get(item, 'quantity'),
-      grams: nestedProperty.get(item, 'grams'),
+      product_id: (nestedProperty.get(item, 'product_id') || "NONE").toString().substring(0, 50).replace(/['"]/g, ''),
+      quantity: parseInt(nestedProperty.get(item, 'quantity').toString().substring(0, 9).replace(/['"]/g, '')),
+      grams: parseInt(nestedProperty.get(item, 'grams').toString().substring(0, 50).replace(/['"]/g, '')),
+      requires_shipping: nestedProperty.get(item, 'requires_shipping') || false,
     })),
-    invoice: (nestedProperty.get(json, 'order_number') || "NONE").toString().substring(0, 50)
+    invoice: (nestedProperty.get(json, 'order_number') || "NONE").toString().substring(0, 50).replace(/['"]/g, ''),
   }
 }
 
@@ -123,12 +123,15 @@ function buildCSV(inputData, json) {
       phone: inputData.phone,
     };
 
-    const lineItems = (inputData.lineItems || []).map((item, index) => ({
-      header: '#P',
-      invoice: inputData.invoice.toString().substring(0, 50),
-      index: parseInt((index + 1).toString().substring(0, 9)),
-      // TODO: add more
-    }));
+    const lineItems = (inputData.lineItems || [])
+      .filter(item => item.requires_shipping === true)
+      .map((item, index) => ({
+        header: '#P',
+        invoice: inputData.invoice,
+        index: parseInt((index + 1).toString().substring(0, 9).replace(/['"]/g, '')),
+        product_id: item.product_id,
+        quantity: item.quantity,
+      }));
 
     const headerSchema = {
       header: { type: "string", min: 2, max: 2 },
@@ -149,6 +152,8 @@ function buildCSV(inputData, json) {
       header: { type: "string", min: 2, max: 2 },
       invoice: { type: "string", min: 1, max: 50 },
       index: { type: "number", positive: true, integer: true, min: 0, max: 999999999 },
+      product_id: { type: "string", min: 1, max: 50 },
+      quantity: { type: "number", positive: true, integer: true, min: 0, max: 999999999 },
     };
 
     const v = new Validator();
@@ -182,6 +187,8 @@ function buildCSV(inputData, json) {
           { id: 'header' },
           { id: 'invoice' },
           { id: 'index' },
+          { id: 'product_id' },
+          { id: 'quantity' },
         ]
       });
 
@@ -194,8 +201,10 @@ function buildCSV(inputData, json) {
       .then(orderId => {
         header.id = orderId;
         const headerCSV = headerCSVStringifier.stringifyRecords([header]);
+        const csv = headerCSV + lineItemsCSV;
+        console.log(csv);
         resolve({
-          csv: headerCSV + lineItemsCSV,
+          csv,
           orderId,
         });
       })

@@ -1,0 +1,8 @@
+#H|7380|01.08.2016|Mustermann GmbH|Max Mustermann|Carl-Benz-Str. 1|DE|1245|Berlin|A10054|max@muster.de|0123456789
+#L|035648|Supplier Spedition|Hauptstraße 3|DE|23456|Berlin
+#P|7380|1|artikel1|10|ch1|ser1|100||bstnr1|1000
+#P|7380|2|artikel1|20|ch2|ser2|200||bstnr1|2000
+#P|7380|3|artikel3|30|ch3|ser3|300||bstnr1|3000
+#P|7380|4|artikel4|40|ch4|ser4|400||bstnr1|4000
+#H|9421|02.08.2016|John Welsh||46 Baker Street|GB|NW2 2LK|London||0123456789
+#P|9421|1|artikel1|10|ch1|ser1|100||bstnr1|1000
