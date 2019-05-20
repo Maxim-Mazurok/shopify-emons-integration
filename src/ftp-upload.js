@@ -15,7 +15,7 @@ const uploadCSV = (csv, orderId) => {
     });
   });
   c.connect({
-    host: process.env.FTP_HOST,
+    host: process.env.FTP_HOST || 'ftp.emons.de',
     port: process.env.FTP_PORT || 21,
     secure: process.env.FTP_SECURE === "true" || false, // Set to true for both control and data connection encryption, 'control' for control connection encryption only, or 'implicit' for implicitly encrypted control connection (this mode is deprecated in modern times, but usually uses port 990)
     user: process.env.FTP_USER,
