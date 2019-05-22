@@ -120,7 +120,7 @@ function buildCSV(inputData, json) {
       header: '#H', // type: `#H` - shipping address; `#L` supplier, we can skip this; `#P` - contains the goods
       id: '', // delivery receipt number, being set later in code, from DB
       date: '', // delivery date, if no delivery date is specified, Emons deliver as soon as possible
-      fullName: inputData.firstName + inputData.lastName,
+      fullName: inputData.firstName + " " + inputData.lastName,
       company: inputData.company,
       address: inputData.address, // street with house number
       country_code: inputData.country_code,
@@ -150,8 +150,8 @@ function buildCSV(inputData, json) {
       header: { type: "string", min: 2, max: 2 },
       id: { type: "string", min: 1, max: 50 },
       date: { type: "string", min: 0, max: 10 },
-      company: { type: "string", min: 1, max: 100 },
       fullName: { type: "string", min: 0, max: 100 },
+      company: { type: "string", min: 1, max: 100 },
       address: { type: "string", min: 1, max: 100 },
       country_code: { type: "string", min: 1, max: 10 },
       zip: { type: "string", min: 1, max: 10 },
