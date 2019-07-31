@@ -9,7 +9,7 @@
     "url": "https://github.com/Maxim-Mazurok/shopify-emons-integration",
     "type": "git"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Integration between Shopify store and Emons shipping",
   "main": "src/server.js",
   "scripts": {
