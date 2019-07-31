@@ -6,7 +6,7 @@
       <synchronize>true</synchronize>
       <remarks>for Daniel</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/merowings_magento2</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/merowings_magento2?serverTimezone=UTC</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
